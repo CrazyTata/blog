@@ -18,7 +18,8 @@
 Route::view('/','home\Index')->name('index');
 Route::view('/blog','home\blog')->name('blog');
 Route::view('/about','home\about')->name('about');
-Route::view('/back','back\index')->name('back');
+Route::view('/back','backend\index\index')->name('back');
+Route::view('/welcome','backend\index\welcome')->name('welcome');
 // Route::get('/','Home\IndexController@index')->name('index');
 // Route::get('/blog','Home\BlogController@index')->name('blog');
 // Route::get('/about','Home\AboutController@index')->name('about');
