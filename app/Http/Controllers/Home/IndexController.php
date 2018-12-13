@@ -15,11 +15,11 @@ class IndexController extends Controller
         return view('Home.Index.index');
     }
 
-    public function index(){
-        return view('Home.Index.index');
-    }
-
-    public function index(){
-        return view('Home.Index.index');
-    }
+//    public function index(){
+//        return view('Home.Index.index');
+//    }
+//
+//    public function index(){
+//        return view('Home.Index.index');
+//    }
 }

@@ -20,6 +20,11 @@ Route::view('/blog','home\blog')->name('blog');
 Route::view('/about','home\about')->name('about');
 Route::view('/back','backend\index\index')->name('back');
 Route::view('/welcome','backend\index\welcome')->name('welcome');
+
+Route::group(['prefix'=>'home','namespace'=>'Home'],function (){
+    Route::resource('detail','DetailController');
+    Route::resource('blog','BlogController');
+});
 // Route::get('/','Home\IndexController@index')->name('index');
 // Route::get('/blog','Home\BlogController@index')->name('blog');
 // Route::get('/about','Home\AboutController@index')->name('about');
