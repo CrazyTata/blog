@@ -12,7 +12,7 @@ class IndexController extends Controller
     //     $this->middleware('guest')->except('logout');
     // }
     public function index(){
-        return view('Home.Index.index');
+        return view('backend.index.index');
     }
 
     public function login(){
