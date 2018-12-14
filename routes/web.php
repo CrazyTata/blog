@@ -24,10 +24,12 @@
 // Route::get('/about','Home\AboutController@index')->name('about');
 // Route::get('/back','Back\IndexController@index')->name('back');
 //后台路由组
-Route::group(['prefix'=>'backend','namespace'=>'Backend','middleware'=>['web']],function (){
+Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web']],function (){
     Route::get('/','IndexController@index');
+    Route::get('/welcome','IndexController@welcome')->name('welcome');
 });
-
+Route::get('/back/login','Backend\IndexController@login');
+Route::get('/back/logout','Backend\IndexController@logout');
 //前台路由组
 Route::group(['namespace'=>'Home','middleware'=>['web']],function (){
     Route::get('/','IndexController@index')->name('index');

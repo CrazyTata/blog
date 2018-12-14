@@ -16,10 +16,13 @@ class IndexController extends Controller
     }
 
     public function login(){
-        return view('Home.Index.index');
+        return view('backend.index.login');
     }
 
+    public function welcome(){
+        return view('backend.index.welcome');
+    }
     public function logout(){
-        return view('Home.Index.index');
+        return view('backend.index.login1');
     }
 }
