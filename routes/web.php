@@ -15,11 +15,22 @@
 //     return view('welcome');
 // });
 //静态页面
-Route::view('/','home\Index')->name('index');
-Route::view('/blog','home\blog')->name('blog');
-Route::view('/about','home\about')->name('about');
-Route::view('/back','back\index')->name('back');
+//Route::view('/','home\Index')->name('index');
+//Route::view('/blog','home\blog')->name('blog');
+//Route::view('/about','home\about')->name('about');
+//Route::view('/back','backend\index')->name('back');
 // Route::get('/','Home\IndexController@index')->name('index');
 // Route::get('/blog','Home\BlogController@index')->name('blog');
 // Route::get('/about','Home\AboutController@index')->name('about');
 // Route::get('/back','Back\IndexController@index')->name('back');
+//后台路由组
+Route::group(['prefix'=>'backend','namespace'=>'Backend','middleware'=>['web']],function (){
+    Route::get('/','IndexController@index');
+});
+
+//前台路由组
+Route::group(['namespace'=>'Home','middleware'=>['web']],function (){
+    Route::get('/','IndexController@index')->name('index');
+    Route::get('/blog','IndexController@blog')->name('blog');
+    Route::get('/about','IndexController@about')->name('about');
+});

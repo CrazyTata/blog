@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
@@ -12,14 +12,14 @@ class IndexController extends Controller
     //     $this->middleware('guest')->except('logout');
     // }
     public function index(){
-        return view('Home.index');
+        return view('Home.Index.index');
     }
 
-    public function blog(){
-        return view('Home.blog');
+    public function login(){
+        return view('Home.Index.index');
     }
 
-    public function about(){
-        return view('Home.about');
+    public function logout(){
+        return view('Home.Index.index');
     }
 }
