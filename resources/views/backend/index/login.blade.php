@@ -23,7 +23,7 @@
 					<li>
 						<input type="text" class="code" name="code"/>
 						<span><i class="fa fa-check-square-o"></i></span>
-						<img src="#" alt="">
+						<img src="{{ url('/back/setCode') }}" alt="验证码" title="点击切换" onclick=" this.src = '{{ url('/back/setCode') }}?' + Math.random()">
 					</li>
 					<li>
 						<input type="submit" value="立即登陆"/>

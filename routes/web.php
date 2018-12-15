@@ -27,6 +27,8 @@
 Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web']],function (){
     Route::get('/','IndexController@index');
     Route::get('/welcome','IndexController@welcome')->name('welcome');
+    Route::get('/setCode','IndexController@setCode');
+    Route::get('/getCode','IndexController@getCode');
 });
 Route::get('/back/login','Backend\IndexController@login');
 Route::get('/back/logout','Backend\IndexController@logout');
