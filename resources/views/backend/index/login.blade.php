@@ -10,7 +10,8 @@
 		<h1>Blog</h1>
 		<h2>tata博客管理平台</h2>
 		<div class="form">
-			<form action="#" method="post">
+			<form action="{{ asset('/back/login') }}" method="post">
+				{{ csrf_field() }}
 				<ul>
 					<li>
 					<input type="text" name="username" class="text"/>

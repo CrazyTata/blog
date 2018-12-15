@@ -30,7 +30,7 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web']],fun
     Route::get('/setCode','IndexController@setCode');
     Route::get('/getCode','IndexController@getCode');
 });
-Route::get('/back/login','Backend\IndexController@login');
+Route::any('/back/login','Backend\IndexController@login');
 Route::get('/back/logout','Backend\IndexController@logout');
 //前台路由组
 Route::group(['namespace'=>'Home','middleware'=>['web']],function (){

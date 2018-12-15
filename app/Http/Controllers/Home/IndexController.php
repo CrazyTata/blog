@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Http\Controllers\Backend\Base;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 
-class IndexController extends Controller
+class IndexController extends Base
 {
     // public function __construct()
     // {
