@@ -71,15 +71,15 @@
 		<tbody>
 			<tr>
 				<th width="30%">服务器计算机名</th>
-				<td><span id="lbServerName">http://127.0.0.1/</span></td>
+				<td><span id="lbServerName">{{$_SERVER['SERVER_ADDR']}}</span></td>
 			</tr>
 			<tr>
 				<td>服务器IP地址</td>
-				<td>192.168.1.1</td>
+				<td>{{$_SERVER['SERVER_ADDR']}}</td>
 			</tr>
 			<tr>
 				<td>服务器域名</td>
-				<td>www.h-ui.net</td>
+				<td>{{$_SERVER['SERVER_NAME']}}</td>
 			</tr>
 			<tr>
 				<td>服务器端口 </td>
@@ -95,7 +95,7 @@
 			</tr>
 			<tr>
 				<td>服务器操作系统 </td>
-				<td>Microsoft Windows NT 5.2.3790 Service Pack 2</td>
+				<td>{{PHP_OS}}</td>
 			</tr>
 			<tr>
 				<td>系统所在文件夹 </td>
@@ -115,7 +115,7 @@
 			</tr>
 			<tr>
 				<td>服务器当前时间 </td>
-				<td>2014-6-14 12:06:23</td>
+				<td><?php echo date('Y年m月d日 H时i分s秒')?></td>
 			</tr>
 			<tr>
 				<td>服务器IE版本 </td>

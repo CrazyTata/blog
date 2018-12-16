@@ -10,16 +10,19 @@
 		<h1>Blog</h1>
 		<h2>tata博客管理平台</h2>
 		<div class="form">
+			@if(session('msg'))
+			<p style="color:red">{{session('msg')}}</p>
+			@endif
 			<form action="{{ asset('/back/login') }}" method="post">
 				{{ csrf_field() }}
 				<ul>
 					<li>
 					<input type="text" name="username" class="text"/>
 						<span><i class="fa fa-user"></i></span>
-					</li>
+
 					<li>
 						<input type="password" name="password" class="text"/>
-						<span><i class="fa fa-lock"></i></span>
+						<span><i class="fa fa-lock"></i></span></li>
 					</li>
 					<li>
 						<input type="text" class="code" name="code"/>
@@ -27,7 +30,7 @@
 						<img src="{{ url('/back/setCode') }}" alt="验证码" title="点击切换" onclick=" this.src = '{{ url('/back/setCode') }}?' + Math.random()">
 					</li>
 					<li>
-						<input type="button" @click="submit_form" value="立即登陆"/>
+						<input type="submit" value="立即登陆"/>
 					</li>
 				</ul>
 			</form>
@@ -55,6 +58,7 @@
 							var password = $.trim($("input[name=password]").val())
 							var code = $.trim($("input[name=code]").val())
 							console.log(username,password,code)
+							return false;
 						}
 					},
 					created:function(){
