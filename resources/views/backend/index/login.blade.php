@@ -27,7 +27,7 @@
 						<img src="{{ url('/back/setCode') }}" alt="验证码" title="点击切换" onclick=" this.src = '{{ url('/back/setCode') }}?' + Math.random()">
 					</li>
 					<li>
-						<input type="submit" value="立即登陆"/>
+						<input type="button" @click="submit_form" value="立即登陆"/>
 					</li>
 				</ul>
 			</form>
@@ -36,3 +36,34 @@
 	</div>
 </body>
 </html>
+<script>
+	$(function(){
+		var model = {
+			initial:function(){
+				model.global();
+				model.bind();
+			},
+			global:function(){
+				model.login = new Vue({
+					el:"login_box",
+					data:{
+
+					},
+					method:{
+						submit_form:function(){
+							var username = $.trim($("input[name=username]").val())
+							var password = $.trim($("input[name=password]").val())
+							var code = $.trim($("input[name=code]").val())
+							console.log(username,password,code)
+						}
+					},
+					created:function(){
+						model.query()
+					}
+				})
+			},
+			query()
+		}
+
+	})
+</script>
