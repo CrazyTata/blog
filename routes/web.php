@@ -24,15 +24,20 @@
 // Route::get('/about','Home\AboutController@index')->name('about');
 // Route::get('/back','Back\IndexController@index')->name('back');
 //后台路由组
-Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web']],function (){
-    Route::get('/','IndexController@index');
-    Route::get('/welcome','IndexController@welcome')->name('welcome');
-    Route::get('/setCode','IndexController@setCode');
-    Route::get('/getCode','IndexController@getCode');
+Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','login']],function (){
+    Route::get('/','Index@index');
+    Route::get('/welcome','Index@welcome')->name('welcome');
+    Route::get('/logout','Index@logout');
+
 });
-Route::any('/back/login','Backend\IndexController@login');
-Route::get('/back/logout','Backend\IndexController@logout');
+Route::get('/back/setCode','Backend\Index@setCode');
+Route::any('/back/login','Backend\Index@login');
+Route::any('/back/modpass','Backend\Index@modifyPass');
+
+
+
 //前台路由组
+
 Route::group(['namespace'=>'Home','middleware'=>['web']],function (){
     Route::get('/','IndexController@index')->name('index');
     Route::get('/blog','IndexController@blog')->name('blog');

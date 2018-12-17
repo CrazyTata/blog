@@ -1,10 +1,8 @@
-﻿@extends('backend.backend')
-@section('title','后台首页')
-@section('content')
+﻿@includeif('backend.header',['title'=>'后台首页'])
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">H-ui.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a> 
-			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v3.1</span> 
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">H-ui.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a>
+			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v3.1</span>
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 			<nav class="nav navbar-nav">
 				<ul class="cl">
@@ -14,40 +12,39 @@
 							<li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
 							<li><a href="javascript:;" onclick="product_add('添加资讯','product-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
 							<li><a href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
-					</ul>
+						</ul>
 					<li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
 					<li class="navbar-levelone"><a href="javascript:;">商城</a></li>
 					<li class="navbar-levelone"><a href="javascript:;">财务</a></li>
 					<li class="navbar-levelone"><a href="javascript:;">手机</a></li>
-				</li>
-			</ul>
-		</nav>
-		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
-			<ul class="cl">
-				<li>超级管理员</li>
-				<li class="dropDown dropDown_hover">
-					<a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
-					<ul class="dropDown-menu menu radius box-shadow">
-						<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
-						<li><a href="#">切换账户</a></li>
-						<li><a href="#">退出</a></li>
+					</li>
 				</ul>
-			</li>
-				<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
-				<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
-					<ul class="dropDown-menu menu radius box-shadow">
-						<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
-						<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
-						<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
-						<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
-						<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
-						<li><a href="javascript:;" data-val="orange" title="橙色">橙色</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
+			</nav>
+			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+				<ul class="cl">
+					<li class="dropDown dropDown_hover">
+						<a href="#" class="dropDown_A">{{ session('user')['name'] }} <i class="Hui-iconfont">&#xe6d5;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a data-toggle="modal" data-target="#myModal">修改密码</a></li>
+							<li><a href="{{ asset('/back/logout') }}">切换账户</a></li>
+							<li><a href="{{ asset('/back/logout') }}">退出</a></li>
+						</ul>
+					</li>
+					<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
+					<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
+							<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
+							<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
+							<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
+							<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
+							<li><a href="javascript:;" data-val="orange" title="橙色">橙色</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</div>
-</div>
 </header>
 <aside class="Hui-aside">
 	<div class="menu_dropdown bk_2">
@@ -180,97 +177,150 @@
 				<li class="active">
 					<span title="我的桌面" data-href="{{ route('welcome') }}">我的桌面</span>
 					<em></em></li>
-		</ul>
-	</div>
+			</ul>
+		</div>
 		<div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
-</div>
+	</div>
 	<div id="iframe_box" class="Hui-article">
 		<div class="show_iframe">
 			<div style="display:none" class="loading"></div>
 			<iframe scrolling="yes" frameborder="0" src="{{ route('welcome') }}"></iframe>
+		</div>
 	</div>
-</div>
 </section>
 
 <div class="contextMenu" id="Huiadminmenu">
 	<ul>
 		<li id="closethis">关闭当前 </li>
 		<li id="closeall">关闭全部 </li>
-</ul>
+	</ul>
 </div>
-@endsection
-@section('js')
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog" style="width: 50%">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
+				<h4 class="modal-title">修改密码</h4>
+			</div>
+
+			<div class="modal-body">
+				{{ csrf_field() }}
+				<table class="table">
+					<tbody>
+						<tr class="text-c">
+							<td style=" text-align:center">用户名</td>
+							<td style=" text-align:center"><input style="" type="text" name="user" value="{{ session('user')['name'] }}" readonly class="input-text"/></td>
+						</tr>
+						<tr class="text-c">
+							<td style=" text-align:center">原密码</td>
+							<td style=" text-align:center"><input style="" type="password" name="password_o" value="" class="input-text"/></td>
+						</tr>
+						<tr class="text-c">
+							<td style=" text-align:center">新密码</td>
+							<td style=" text-align:center"><input style="" type="password" name="password_n" value="" class="input-text"/></td>
+						</tr>
+						<tr class="text-c">
+							<td style=" text-align:center">确认密码</td>
+							<td style=" text-align:center"><input style="" type="password" name="password_r" class="input-text"/></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button name="" id="" class="btn btn-primary" @click="doCheckAll()">保存</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/out/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/out/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="out/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="out/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="js/lib/vue/vue.js"></script>
+
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="out/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
-<script type="text/javascript">
-$(function(){
-	/*$("#min_title_list li").contextMenu('Huiadminmenu', {
-		bindings: {
-			'closethis': function(t) {
-				console.log(t);
-				if(t.find("i")){
-					t.find("i").trigger("click");
-				}		
-			},
-			'closeall': function(t) {
-				alert('Trigger was '+t.id+'\nAction was Email');
-			},
-		}
-	});*/
+<script type="text/javascript" src="/out/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 
+<script>
+	(function(){
+        var model={
+            initial:function(){
+                model.global();
+                model.bind();
+            },
+            global:function(){
+                model.pageIndex = new Vue({
+                    el:'#myModal',
+                    data:{
 
-	$("body").Huitab({
-		tabBar:".navbar-wrapper .navbar-levelone",
-		tabCon:".Hui-aside .menu_dropdown",
-		className:"current",
-		index:0,
-	});
-});
-/*个人信息*/
-function myselfinfo(){
-	layer.open({
-		type: 1,
-		area: ['300px','200px'],
-		fix: false, //不固定
-		maxmin: true,
-		shade:0.4,
-		title: '查看信息',
-		content: '<div>管理员信息</div>'
-	});
-}
+                    },
+                    methods:{
+                        doCheckAll:function(){
+                            $name = $.trim($('input[name=user]').val());
+                            $password_o = $.trim($('input[name=password_o]').val());
+                            $password_n = $.trim($('input[name=password_n]').val());
+                            $password_r = $.trim($('input[name=password_r]').val());
+                            if($password_o==''&&$password_n==''&&$password_r==''){
+                                return false;
+                            }
+                            if($password_o==''){
+                                layer.alert('请输入原始密码')
+                            }
+                            if($password_n==''){
+                                layer.alert('请输入新密码')
+                            }
+                            if($password_r==''){
+                                layer.alert('请输入确认密码')
+                            }
+                            if($password_n!=$password_r){
+                                layer.alert('两次输入密码不一致')
+                            }
+                            model.saveSome($name,$password_o,$password_n,$password_r);
+                        },
+                    },
+                    created:function () {
 
-/*资讯-添加*/
-function article_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*图片-添加*/
-function picture_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*产品-添加*/
-function product_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*用户-添加*/
-function member_add(title,url,w,h){
-	layer_show(title,url,w,h);
-}
+                    }
+                })
+            },
+            saveSome:function(name,password_o,password_n,password_r){
+				// $.post('/back/modifyPass',{name:name,password1:password_o,password2:password_n,password3:password_r,_token: $('input[name=_token]').val()},function(res){
+				// 	console.log(res)
+				// });
 
+                $.ajax({
+                    type: 'POST',
+                    url: '/back/modpass',
+                    data: {
+                        name:name,
+                        password1:password_o,
+                        password2:password_n,
+                        password3:password_r,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    dataType: 'json',
+                    success: function(res){
+                        console.log(res)
+                        //验证成功后实现跳转
+                        // window.location.href = "/admin/index";
+                    },
+                    error: function(xhr, status, error){
+                        console.log(xhr);
+                        console.log(status);
+                        console.log(error);
+                    }
+                });
+            },
+            bind:function(){
+
+            }
+
+        }
+        model.initial();
+	})();
 
 </script>
-@endsection
+@includeif('backend.footer')
