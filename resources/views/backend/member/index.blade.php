@@ -86,7 +86,7 @@
 			</div>
 			
 			<div class="modal-footer">
-				<button name="" id="" class="btn btn-primary" @click="submitEidt">保存</button>
+				<button name="" id="" class="btn btn-primary" @click="submitEdit">保存</button>
 				<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭</button>
 			</div>
 		</div>
@@ -115,7 +115,8 @@
 						memberLists:{},
 						groupLists:{},
 						editLists:{},
-						adminRole:''
+						adminRole:'',
+						originRole:''
 					},
 					methods:{
 						submitForm:function(){
@@ -142,14 +143,22 @@
 						adminEdit:function(id){
 							this.editLists=id
 							this.adminRole=id.user_group
+							this.originRole=id.user_group
 							model.doGetGroupList()
 						},
-						submitEidt:function(){
+						submitEdit:function(){
 							var id=this.editLists.id
-							var adminNames=$.trim($("input[name=adminNames]"))
-							var phones=$.trim($("input[name=adminNames]"))
-							id=this.editLists.id
-							if()
+							var adminNames=$.trim($("input[name=adminNames]").val())
+							var phones=$.trim($("input[name=phones]").val())
+							var adminRole=this.adminRole
+							console.log(id,adminNames,phones,adminRole)
+							if(adminNames==''||adminRole==''||phones==''||id==''){
+								layer.msg('请先填写必填项',{icon:5})
+							}
+							if(this.originRole==adminRole && adminNames== this.editLists.name&& phones==this.editLists.telephone){
+								layer.msg('您没有做任何修改',{icon:5})
+							}
+							model.doSubmitEdit(id,adminNames,phones,adminRole)
 						}
 					},
 					created:function () {
@@ -158,7 +167,6 @@
 				})
 			},
 			query:function (page,size,search) {
-				
 				$.ajax({
 					url:'{{ asset("/back/member") }}',
 					type:'post',
@@ -202,6 +210,17 @@
                     }
 				})
             },
+			doSubmitEdit:function(id,name,phone,role){
+				$.ajax({
+					url:'{{ asset("/back/member/1/edit") }}',
+					type:'get',
+					dataType:'json',
+					data:{},
+					success:function (msg) {
+						model.memberList.groupLists=msg
+					}
+				})
+			},
             doPage:function(list){
             	layui.use('laypage', function(){
 					var laypage = layui.laypage;

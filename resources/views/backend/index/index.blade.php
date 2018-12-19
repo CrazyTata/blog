@@ -1,8 +1,8 @@
 ﻿@includeif('backend.header',['title'=>'后台首页'])
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">H-ui.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a>
-			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v3.1</span>
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">TATA</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a>
+			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.0</span>
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 			<nav class="nav navbar-nav">
 				<ul class="cl">
@@ -49,10 +49,10 @@
 <aside class="Hui-aside">
 	<div class="menu_dropdown bk_2">
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="article-list.html" data-title="资讯管理" href="javascript:void(0)">资讯管理</a></li>
+					<li><a data-href="{{ asset('/back/member') }}" data-title="用户管理" href="javascript:void(0)">用户管理</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -177,7 +177,12 @@
 				<li class="active">
 					<span title="我的桌面" data-href="{{ route('welcome') }}">我的桌面</span>
 					<em></em></li>
-			</ul>
+			</ul><div class="contextMenu" id="Huiadminmenu">
+				<ul>
+					<li id="closethis">关闭当前 </li>
+					<li id="closeall">关闭全部 </li>
+				</ul>
+			</div>
 		</div>
 		<div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
 	</div>
