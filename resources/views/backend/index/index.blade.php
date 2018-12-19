@@ -234,12 +234,6 @@
 	</div>
 </div>
 
-<!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="/out/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/out/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="out/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="out/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="js/lib/vue/vue.js"></script>
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="/out/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
@@ -287,10 +281,6 @@
                 })
             },
             saveSome:function(name,password_o,password_n,password_r){
-				// $.post('/back/modifyPass',{name:name,password1:password_o,password2:password_n,password3:password_r,_token: $('input[name=_token]').val()},function(res){
-				// 	console.log(res)
-				// });
-
                 $.ajax({
                     type: 'POST',
                     url: '/back/modpass',
@@ -303,14 +293,12 @@
                     },
                     dataType: 'json',
                     success: function(res){
-                        console.log(res)
-                        //验证成功后实现跳转
-                        // window.location.href = "/admin/index";
-                    },
-                    error: function(xhr, status, error){
-                        console.log(xhr);
-                        console.log(status);
-                        console.log(error);
+                        if(res.code==0){
+                        	layer.msg(res.msg,{icon:5})
+                        }else{
+                        	layer.msg(res.msg,{icon:6})
+                        	$('#myModal').modal('hide');
+                        }
                     }
                 });
             },

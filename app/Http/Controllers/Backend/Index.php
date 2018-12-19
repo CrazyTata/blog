@@ -32,11 +32,17 @@ class Index extends Base
             if(empty($info['id'])) return back()->with('msg','用户名不存在');
             if($info['password']!=md5(md5($password))) return back()->with('msg','密码错误');
             session(['user'=>$info]);
-            Member::where('id',$info['id'])->update(['load_time'=>date('Y-m-d H:i:s')]);
+            $ips = getIp();
+            if(is_array($ips)) $ip = $ips[0];
+            else $ip = $ips;
+            Member::where('id',$info['id'])->update(['load_time'=>date('Y-m-d H:i:s'),'ip'=>$ip]);
             return redirect('/back');
         }else{
             return view('backend.index.login');
         }
+    }
+    public function test(){
+        dd(getIp());
     }
 
     public function welcome(){
@@ -50,6 +56,11 @@ class Index extends Base
         return $this->code->make();
     }
 
+    /**
+     * 修改密码
+     * @param Request $request
+     * @return array|bool
+     */
     public function modifyPass(Request $request){
 //        $ruler = [
 //            'name'=>'require',
@@ -89,7 +100,8 @@ class Index extends Base
         if($value['password'] != md5(md5($password1)))return ['code'=>0,'msg'=>'原密码输入错误'];
         if($password1 == $password2) return ['code'=>0,'msg'=>'原密码跟新密码一致'];
         $value['password'] = $n_password;
-        $res = Member::update($value);
-        return $res;
+        $res = Member::where(['name'=>$name])->update(['password'=>$n_password]);
+        if(false !== $res) return ['code'=>1,'msg'=>'修改成功'];
+        return ['code'=>0,'msg'=>'发生未知错误，请稍后重试'];
     }
 }

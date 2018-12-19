@@ -16,8 +16,14 @@
     <link rel="stylesheet" type="text/css" href="/out/lib/Hui-iconfont/1.0.8/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="/out/static/h-ui.admin/skin/default/skin.css" id="skin" />
     <link rel="stylesheet" type="text/css" href="/out/static/h-ui.admin/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/out/static/h-ui.admin/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/out/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" href="/out/lib/layui/css/layui.css" media="all">
+
+    <script type="text/javascript" src="/out/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/out/lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="/out/static/h-ui/js/H-ui.min.js"></script>
+    <script type="text/javascript" src="/out/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <script type="text/javascript" src="/js/lib/vue/vue.js"></script>
+    <script src="/out/lib/layui/layui.js"></script>
     <!--[if IE 6]>
     <script type="text/javascript" src="/out/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>

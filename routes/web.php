@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 //静态页面
-//Route::view('/','home\Index')->name('index');
+// Route::view('/back/memberadd','backend\member\addmember')->name('index');
 //Route::view('/blog','home\blog')->name('blog');
 //Route::view('/about','home\about')->name('about');
 //Route::view('/back','backend\index')->name('back');
@@ -25,9 +25,13 @@
 // Route::get('/back','Back\IndexController@index')->name('back');
 //后台路由组
 Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','login']],function (){
-    Route::get('/','Index@index');
-    Route::get('/welcome','Index@welcome')->name('welcome');
-    Route::get('/logout','Index@logout');
+    Route::get('/','Index@index');//首页
+    Route::get('/welcome','Index@welcome')->name('welcome');//首页中的欢迎也
+    Route::get('/logout','Index@logout');//退出页
+    Route::get('/test','Index@test');
+    Route::post('/member/add','Members@addMember');
+    Route::resource('/member','Members');//用户页
+
 
 });
 Route::get('/back/setCode','Backend\Index@setCode');

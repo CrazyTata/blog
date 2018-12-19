@@ -2,9 +2,8 @@
 @section('title','欢迎页')
 @section('content')
 <div class="page-container">
-	<p class="f-20 text-success">欢迎使用H-ui.admin <span class="f-14">v3.1</span>后台模版！</p>
-	<p>登录次数：18 </p>
-	<p>上次登录IP：222.35.131.79.1  上次登录时间：2014-6-14 11:19:55</p>
+	<p class="f-20 text-success">欢迎使用tata博客 <span class="f-14">v3.1</span>后台模版！</p>
+	<p>上次登录IP {{ session('user')['ip']}}  上次登录时间：{{ session('user')['load_time']}}</p>
 	<table class="table table-border table-bordered table-bg">
 		<thead>
 			<tr>
