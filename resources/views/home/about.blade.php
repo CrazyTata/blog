@@ -1,313 +1,50 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Paper &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
-
-	<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="top-menu">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-7 text-left menu-1">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="blog.html">Lifestyle</a></li>
-									<li class="has-dropdown">
-										<a href="blog.html">Blog</a>
-										<ul class="dropdown">
-											<li><a href="#">Web Design</a></li>
-											<li><a href="#">eCommerce</a></li>
-											<li><a href="#">Branding</a></li>
-											<li><a href="#">API</a></li>
-										</ul>
-									</li>
-									<li class="active"><a href="about.html">About</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</div>
-							<div class="col-sm-5">
-								<ul class="fh5co-social-icons">
-									<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-									<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-									<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-									<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 text-center menu-2">
-					<div id="fh5co-logo">
-						<h1>
-							<a href="index.html">
-							Paper<span>.</span>
-							<small>Blog Theme</small>
-							</a>
-						</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
-
-	<div id="fh5co-content" class="fh5co-no-pd-top">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2><span>About Us</span></h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<div class="fh5co-staff">
-						<img src="images/user-2.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
-						<h3>Jean Smith</h3>
-						<strong class="role">CEO, Founder</strong>
-						<p>Quos quia provident conse culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita.</p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="fh5co-blog">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-12 col-md-offset-0 text-center fh5co-heading">
-					<h2><span>My Posts</span></h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<div class="title text-center">
-							<span class="posted-on">Nov. 15th 2016</span>
-							<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
-							<span class="category">Lifestyle</span>
-						</div>
-						<a href="#"><img class="img-responsive" src="images/blog-2.jpg" alt=""></a>
-						<div class="blog-text text-center">
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="fh5co-social-icons">
-								<li>Share:</li>
-								<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<div class="title text-center">
-							<span class="posted-on">Nov. 15th 2016</span>
-							<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
-							<span class="category">Lifestyle</span>
-						</div>
-						<a href="#"><img class="img-responsive" src="images/blog-1.jpg" alt=""></a>
-						<div class="blog-text text-center">
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="fh5co-social-icons">
-								<li>Share:</li>
-								<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<div class="title text-center">
-							<span class="posted-on">Nov. 15th 2016</span>
-							<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
-							<span class="category">Lifestyle</span>
-						</div>
-						<a href="#"><img class="img-responsive" src="images/blog-2.jpg" alt=""></a>
-						<div class="blog-text text-center">
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="fh5co-social-icons">
-								<li>Share:</li>
-								<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-instagram">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-12 col-md-offset-0 text-center fh5co-heading">
-					<h2><span>Instagram Posts</span></h2>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 nopadding animate-box">
-				<div class="insta" style="background-image: url(images/insta-1.jpg);"></div>
-			</div>
-			<div class="col-md-3 nopadding animate-box">
-				<div class="insta" style="background-image: url(images/insta-2.jpg);"></div>
-			</div>
-			<div class="col-md-3 nopadding animate-box">
-				<div class="insta" style="background-image: url(images/insta-3.jpg);"></div>
-			</div>
-			<div class="col-md-3 nopadding animate-box">
-				<div class="insta" style="background-image: url(images/insta-4.jpg);"></div>
-			</div>
-		</div>
-	</div>
-
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget">
-					<h4>Paper</h4>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-				</div>
-				<div class="col-md-4 col-md-push-1">
-					<h4>Links</h4>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Lifestyle</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-4 col-md-push-1">
-					<h4>Contact Information</h4>
-					<ul class="fh5co-footer-links">
-						<li>198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-						<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-						<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-						<li><a href="http://freehtml5.co">FreeHTML5.co</a></li>
-					</ul>
-				</div>
-
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
-
-	</body>
-</html>
-
+@include('home.header',['title'=>'关于我'])
+<article>
+  <h1 class="t_nav"><span>像“草根”一样，紧贴着地面，低调的存在，冬去春来，枯荣无恙。</span><a href="/" class="n1">网站首页</a><a href="/" class="n2">关于我</a></h1>
+  <div class="ab_box">
+    <div class="leftbox">
+      <div class="newsview">
+        <div class="news_infos">
+          <p>杨青，女，一个80后草根女站长！09年入行。一直潜心研究web前端技术，一边工作一边积累经验，分享一些个人博客模板，以及SEO优化等心得。我入行早，大家也亲切的叫我&ldquo;青姐&rdquo;。<br />
+            <br />
+            SEO奋斗了将近两年时间，个人博客网站百度排名也从之前的30页后，排到了第一页。期间有很多的不容易，但是都没有放弃过。入了这一行，就深深的喜欢上它。我喜欢一句话&ldquo;冥冥中该来则来，无处可逃&rdquo;。<br />
+            <br />
+            近几年我也发现个人博客排前几页的也有很多是我做过的模板，感谢各位站长的欣赏，我仔细看过他们的网站。他们在我原模板的基础上有修改，而且他们做的原创内容都是值得一读的。有时候甚至排名都超过了我个人博客网站的排名。<br />
+            <br />
+            现在很多人向我请教如何做好SEO，我想说的是，一是&ldquo;代码&rdquo;，一定要简单，布局要合理。二是&ldquo;内容&rdquo;，一定要有原创，伪原创也是可以的。三是&ldquo;持续&rdquo;，这是一个持续性过程，一定要有耐心，SEO不是马上生效的。<br />
+            <br />
+            自从入了这一行，也交到了不少朋友，QQ群也不断的壮大起来，280998807(交流群 <span style="color:#FF0000;">已满员</span>)&nbsp; 280998843（技术群），群里的小伙伴们也很积极的帮助新朋友解决问题，如果你想加入我们，这个大家庭的门，永远给你敞开！另外微信群已于2018.4.13日开通（已满100，只接受群主邀请，可加我个人微信进群 。我的个人微信号 yangqq_1987）</p>
+          <br />
+          <h2>About my blog</h2>
+          &nbsp;
+          <p>域 名：www.yangqq.com 创建于2011年01月12日&nbsp;</p>
+          <br />
+          <p>服务器：阿里云服务器&nbsp;&nbsp;<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=8smrzoqa&amp;productCode=vm" target="_blank"><span style="color:#FF0000;"><strong>前往阿里云官网购买&gt;&gt;</strong></span></a></p>
+          <br />
+          <p>备案号：蜀ICP备11002373号-1</p>
+          <br />
+          <p>程 序：PHP 帝国CMS7.5</p>
+        </div>
+      </div>
+    </div>
+    <div class="rightbox">
+      <div class="aboutme">
+        <h2 class="hometitle">关于我</h2>
+        <div class="avatar"> <img src="images/avatar.jpg"> </div>
+        <div class="ab_con">
+          <p>网名：dancesmile | 杨青</p>
+          <p>职业：Web前端设计师、网页设计 </p>
+          <p>个人微信：yangqq_1987</p>
+          <p>邮箱：dancesmiling@qq.com</p>
+        </div>
+      </div>
+      <div class="weixin">
+        <h2 class="hometitle">微信关注</h2>
+        <ul>
+          <img src="images/wx.jpg">
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+@include('home.footer')

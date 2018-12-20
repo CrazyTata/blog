@@ -1,337 +1,209 @@
-@extends('layouts.home')
-@section('title','首页')
-@section('content')
-	<aside id="fh5co-hero">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
-					<div class="flexslider animate-box">
-						<ul class="slides">
-					   	<li style="background-image: url(/images/images/img_bg_1.jpg);">
-					   		<div class="overlay-gradient"></div>
-					   		<div class="container-fluid">
-					   			<div class="row">
-						   			<div class="col-md-10 col-md-offset-1 slider-text">
-						   				<div class="slider-text-inner">
-						   					<h1>Not Every Project Needs To Be Perfect</h1>
-												<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-												<p class="ct"><a href="#">Learn More <i class="icon-arrow-right"></i></a></p>
-						   				</div>
-						   			</div>
-						   		</div>
-					   		</div>
-					   	</li>
-					   	<li style="background-image: url(/images/images/img_bg_2.jpg);">
-					   		<div class="overlay-gradient"></div>
-					   		<div class="container-fluid">
-					   			<div class="row">
-						   			<div class="col-md-10 col-md-offset-1 slider-text">
-						   				<div class="slider-text-inner">
-						   					<h1>Minimal &amp; Clean Blog WordPress</h1>
-												<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-												<p class="ct"><a href="#">Learn More <i class="icon-arrow-right"></i></a></p>
-						   				</div>
-						   			</div>
-						   		</div>
-					   		</div>
-					   	</li>
-					   	<li style="background-image: url(/images/images/img_bg_3.jpg);">
-					   		<div class="overlay-gradient"></div>
-					   		<div class="container-fluid">
-					   			<div class="row">
-						   			<div class="col-md-10 col-md-offset-1 slider-text">
-						   				<div class="slider-text-inner">
-						   					<h1>What Would You Like To Learn?</h1>
-												<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-												<p class="ct"><a href="#">Learn More <i class="icon-arrow-right"></i></a></p>
-						   				</div>
-						   			</div>
-						   		</div>
-					   		</div>
-					   	</li>		   	
-					  	</ul>
-				  	</div>
-				</div>
-				<div class="col-md-4">
-					<a href="#" class="featured text-center animate-box" style="background-image: url(/images/images/img_bg_3.jpg);">
-						<div class="desc">
-							<span class="date">Dec 25, 2016</span>
-							<h3>Every Start has an End</h3>
-							<span class="category">Inspirational</span>
-						</div>
-					</a>
-					<a href="#" class="featured text-center animate-box" style="background-image: url(/images/images/img_bg_2.jpg);">
-						<div class="desc">
-							<span class="date">Dec 25, 2016</span>
-							<h3>Most Beautiful Website in 2016</h3>
-							<span class="category">Inspirational</span>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</aside>
-
-	<div id="fh5co-blog-popular">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-12 col-md-offset-0 text-center fh5co-heading">
-					<h2><span>Popular Post</span></h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3">
-					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="/images/images/blog-1.jpg" alt=""></a>
-						<div class="blog-text">
-							<h3><a href="#">Conquer The World</a></h3>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="/images/images/blog-2.jpg" alt=""></a>
-						<div class="blog-text">
-							<h3><a href="#">List Minimal Design</a></h3>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="/images/images/blog-1.jpg" alt=""></a>
-						<div class="blog-text">
-							<h3><a href="#">Modeling Spotted</a></h3>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="/images/images/blog-2.jpg" alt=""></a>
-						<div class="blog-text">
-							<h3><a href="#">Around The World</a></h3>
-						</div> 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-content">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-9 col-padded-right">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="fh5co-blog animate-box">
-								<div class="title title-pin text-center">
-									<span class="posted-on">Nov. 15th 2016</span>
-									<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
-									<span class="category">Lifestyle</span>
-								</div>
-								<a href="#"><img class="img-responsive" src="/images/images/blog-1.jpg" alt=""></a>
-								<div class="blog-text text-center">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius. Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-									<ul class="fh5co-social-icons">
-										<li>Share:</li>
-										<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-									</ul>
-								</div> 
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="fh5co-blog animate-box">
-								<div class="title text-center">
-									<span class="posted-on">Nov. 15th 2016</span>
-									<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
-									<span class="category">Lifestyle</span>
-								</div>
-								<a href="#"><img class="img-responsive" src="/images/images/blog-2.jpg" alt=""></a>
-								<div class="blog-text text-center">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<ul class="fh5co-social-icons">
-										<li>Share:</li>
-										<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-									</ul>
-								</div> 
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="fh5co-blog animate-box">
-								<div class="title text-center">
-									<span class="posted-on">Nov. 15th 2016</span>
-									<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
-									<span class="category">Lifestyle</span>
-								</div>
-								<a href="#"><img class="img-responsive" src="/images/images/blog-1.jpg" alt=""></a>
-								<div class="blog-text text-center">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<ul class="fh5co-social-icons">
-										<li>Share:</li>
-										<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-									</ul>
-								</div> 
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="fh5co-blog animate-box">
-								<div class="title text-center">
-									<span class="posted-on">Nov. 15th 2016</span>
-									<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
-									<span class="category">Lifestyle</span>
-								</div>
-								<a href="#"><img class="img-responsive" src="/images/images/blog-2.jpg" alt=""></a>
-								<div class="blog-text text-center">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<ul class="fh5co-social-icons">
-										<li>Share:</li>
-										<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-									</ul>
-								</div> 
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="fh5co-blog animate-box">
-								<div class="title text-center">
-									<span class="posted-on">Nov. 15th 2016</span>
-									<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
-									<span class="category">Lifestyle</span>
-								</div>
-								<a href="#"><img class="img-responsive" src="/images/images/blog-1.jpg" alt=""></a>
-								<div class="blog-text text-center">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<ul class="fh5co-social-icons">
-										<li>Share:</li>
-										<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-										<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-									</ul>
-								</div> 
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<aside id="sidebar">
-					<div class="col-md-3">
-						<div class="side animate-box">
-							<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
-								<h2><span>About Me</span></h2>
-							</div>
-							<div class="fh5co-staff">
-								<img src="/images/images/user-2.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
-								<h3>Jean Smith</h3>
-								<strong class="role">CEO, Founder</strong>
-								<p>Quos quia provident conse culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita.</p>
-								<ul class="fh5co-social-icons">
-									<li><a href="#"><i class="icon-facebook"></i></a></li>
-									<li><a href="#"><i class="icon-twitter"></i></a></li>
-									<li><a href="#"><i class="icon-dribbble"></i></a></li>
-									<li><a href="#"><i class="icon-github"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="side animate-box">
-							<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
-								<h2><span>Latest Posts</span></h2>
-							</div>
-							<div class="blog-entry">
-								<a href="#">
-									<img src="/images/images/blog-1.jpg" class="img-responsive" alt="">
-									<div class="desc">
-										<span class="date">Dec. 25, 2016</span>
-										<h3>Most Beautiful Site in 2016</h3>
-									</div>
-								</a>
-							</div>
-							<div class="blog-entry">
-								<a href="#">
-									<img src="/images/images/blog-2.jpg" class="img-responsive" alt="">
-									<div class="desc">
-										<span class="date">Dec. 25, 2016</span>
-										<h3>Most Beautiful Site in 2016</h3>
-									</div>
-								</a>
-							</div>
-							<div class="blog-entry">
-								<a href="#">
-									<img src="/images/images/blog-1.jpg" class="img-responsive" alt="">
-									<div class="desc">
-										<span class="date">Dec. 25, 2016</span>
-										<h3>Most Beautiful Site in 2016</h3>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="side animate-box">
-							<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
-								<h2><span>Category</span></h2>
-							</div>
-							<ul class="category">
-								<li><a href="#"><i class="icon-check"></i>Lifestyle</a></li>
-								<li><a href="#"><i class="icon-check"></i>Web Development</a></li>
-								<li><a href="#"><i class="icon-check"></i>Web Design</a></li>
-								<li><a href="#"><i class="icon-check"></i>Nature</a></li>
-								<li><a href="#"><i class="icon-check"></i>Life</a></li>
-								<li><a href="#"><i class="icon-check"></i>Entertainment</a></li>
-							</ul>
-						</div>
-						<div class="side animate-box">
-							<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
-								<h2><span>Intagram</span></h2>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="insta" style="background-image: url(/images/images/insta-1.jpg);">
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</aside>
-
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-instagram">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-12 col-md-offset-0 text-center fh5co-heading">
-					<h2><span>Instagram Posts</span></h2>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 nopadding animate-box" data-animate-effect="fadeIn">
-				<div class="insta" style="background-image: url(/images/images/insta-1.jpg);"></div>
-			</div>
-			<div class="col-md-3 nopadding animate-box" data-animate-effect="fadeIn">
-				<div class="insta" style="background-image: url(/images/images/insta-2.jpg);"></div>
-			</div>
-			<div class="col-md-3 nopadding animate-box" data-animate-effect="fadeIn">
-				<div class="insta" style="background-image: url(/images/images/insta-3.jpg);"></div>
-			</div>
-			<div class="col-md-3 nopadding animate-box" data-animate-effect="fadeIn">
-				<div class="insta" style="background-image: url(/images/images/insta-4.jpg);"></div>
-			</div>
-		</div>
-	</div>
-@endsection
-
-@section('js')
-<script src="{{ asset('js/index/index.js') }}"></script> 
-@endsection
+@include('home.header',['title'=>'首页'])
+<div class="picshow">
+  <ul>
+    <li><a href="/"><i><img src="home/images/b01.jpg"></i>
+        <div class="font">
+          <h3>个人博客模板《早安》</h3>
+        </div>
+      </a></li>
+    <li><a href="/"><i><img src="home/images/b02.jpg"></i>
+        <div class="font">
+          <h3>个人博客模板《早安》</h3>
+        </div>
+      </a></li>
+    <li><a href="/"><i><img src="home/images/b03.jpg"></i>
+        <div class="font">
+          <h3>个人博客模板《早安》</h3>
+        </div>
+      </a></li>
+    <li><a href="/"><i><img src="home/images/b04.jpg"></i>
+        <div class="font">
+          <h3>个人博客模板《早安》</h3>
+        </div>
+      </a></li>
+    <li><a href="/"><i><img src="home/images/b05.jpg"></i>
+        <div class="font">
+          <h3>个人博客模板《早安》</h3>
+        </div>
+      </a></li>
+  </ul>
+</div>
+<article>
+  <div class="blogs">
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text02.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">陌上花开，可缓缓归矣</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/zd03.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/zd01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/zd02.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/zd01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
+      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
+      <div class="bloginfo">
+        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+      </div>
+      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
+    </li>
+  </div>
+  <div class="sidebar">
+    <div class="about">
+      <div class="avatar"> <img src="home/images/avatar.jpg" alt=""> </div>
+      <p class="abname">dancesmile | tata</p>
+      <p class="abposition">Web前端设计师、网页设计</p>
+      <div class="abtext"> 一个80后草根女站长！09年入行。一直潜心研究web前端技术，一边工作一边积累经验，分享一些个人博客模板，以及SEO优化等心得。 </div>
+    </div>
+    <div class="search">
+      <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="cloud">
+      <h2 class="hometitle">标签云</h2>
+      <ul>
+        <a href="/">陌上花开</a> <a href="/">校园生活</a> <a href="/">html5</a> <a href="/">SumSung</a> <a href="/">青春</a> <a href="/">温暖</a> <a href="/">阳光</a> <a href="/">三星</a><a href="/">索尼</a> <a href="/">华维荣耀</a> <a href="/">三星</a> <a href="/">索尼</a>
+      </ul>
+    </div>
+    <div class="paihang">
+      <h2 class="hometitle">点击排行</h2>
+      <ul>
+        <li><b><a href="/download/div/2015-04-10/746.html" target="_blank">【活动作品】柠檬绿兔小白个人博客模板30...</a></b>
+          <p><i><img src="home/images/t02.jpg"></i>展示的是首页html，博客页面布局格式简单，没有复杂的背景，色彩局部点缀，动态的幻灯片展示，切换卡，标...</p>
+        </li>
+        <li><b><a href="/download/div/2014-02-19/649.html" target="_blank"> 个人博客模板（2014草根寻梦）30...</a></b>
+          <p><i><img src="home/images/b03.jpg"></i>2014第一版《草根寻梦》个人博客模板简单、优雅、稳重、大气、低调。专为年轻有志向却又低调的草根站长设...</p>
+        </li>
+        <li><b><a href="/download/div/2013-08-08/571.html" target="_blank">黑色质感时间轴html5个人博客模板30...</a></b>
+          <p><i><img src="home/images/b04.jpg"></i>黑色时间轴html5个人博客模板颜色以黑色为主色，添加了彩色作为网页的一个亮点，导航高亮显示、banner图片...</p>
+        </li>
+        <li><b><a href="/download/div/2014-09-18/730.html" target="_blank">情侣博客模板系列之《回忆》Html30...</a></b>
+          <p><i><img src="home/images/b05.jpg"></i>Html5+css3情侣博客模板，主题《回忆》，使用css3技术实现网站动画效果，主题《回忆》,分为四个主要部分，...</p>
+        </li>
+        <li><b><a href="/download/div/2014-04-17/661.html" target="_blank">黑色Html5个人博客模板主题《如影随形》30...</a></b>
+          <p><i><img src="home/images/b06.jpg"></i>014第二版黑色Html5个人博客模板主题《如影随形》，如精灵般的影子会给人一种神秘的感觉。一张剪影图黑白...</p>
+        </li>
+        <li><b><a href="/jstt/bj/2015-01-09/740.html" target="_blank">【匆匆那些年】总结个人博客经历的这四年…30...</a></b>
+          <p><i><img src="home/images/mb02.jpg"></i>博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也...</p>
+        </li>
+      </ul>
+    </div>
+    <div class="paihang">
+      <h2 class="hometitle">站长推荐</h2>
+      <ul>
+        <li><b><a href="/download/div/2015-04-10/746.html" target="_blank">【活动作品】柠檬绿兔小白个人博客模板30...</a></b>
+          <p><i><img src="home/images/t02.jpg"></i>展示的是首页html，博客页面布局格式简单，没有复杂的背景，色彩局部点缀，动态的幻灯片展示，切换卡，标...</p>
+        </li>
+        <li><b><a href="/download/div/2014-02-19/649.html" target="_blank"> 个人博客模板（2014草根寻梦）30...</a></b>
+          <p><i><img src="home/images/b03.jpg"></i>2014第一版《草根寻梦》个人博客模板简单、优雅、稳重、大气、低调。专为年轻有志向却又低调的草根站长设...</p>
+        </li>
+        <li><b><a href="/download/div/2013-08-08/571.html" target="_blank">黑色质感时间轴html5个人博客模板30...</a></b>
+          <p><i><img src="home/images/b04.jpg"></i>黑色时间轴html5个人博客模板颜色以黑色为主色，添加了彩色作为网页的一个亮点，导航高亮显示、banner图片...</p>
+        </li>
+        <li><b><a href="/download/div/2014-09-18/730.html" target="_blank">情侣博客模板系列之《回忆》Html30...</a></b>
+          <p><i><img src="home/images/b05.jpg"></i>Html5+css3情侣博客模板，主题《回忆》，使用css3技术实现网站动画效果，主题《回忆》,分为四个主要部分，...</p>
+        </li>
+        <li><b><a href="/download/div/2014-04-17/661.html" target="_blank">黑色Html5个人博客模板主题《如影随形》30...</a></b>
+          <p><i><img src="home/images/b06.jpg"></i>014第二版黑色Html5个人博客模板主题《如影随形》，如精灵般的影子会给人一种神秘的感觉。一张剪影图黑白...</p>
+        </li>
+        <li><b><a href="/jstt/bj/2015-01-09/740.html" target="_blank">【匆匆那些年】总结个人博客经历的这四年…30...</a></b>
+          <p><i><img src="home/images/mb02.jpg"></i>博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也...</p>
+        </li>
+      </ul>
+    </div>
+    <div class="links">
+      <h2 class="hometitle">友情链接</h2>
+      <ul>
+        <li><a href="http://www.yangqq.com" title="tata个人博客">tata个人博客</a></li>
+        <li><a href="http://www.yangqq.com" title="tata个人博客">tata个人博客</a></li>
+        <li><a href="http://www.yangqq.com" title="tata个人博客">tata个人博客</a></li>
+      </ul>
+    </div>
+    <div class="weixin">
+      <h2 class="hometitle">官方微信</h2>
+      <ul>
+        <img src="home/images/wx.jpg">
+      </ul>
+    </div>
+  </div>
+</article>
+@include('home.footer')
