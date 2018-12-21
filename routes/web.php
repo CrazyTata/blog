@@ -28,7 +28,7 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
     Route::get('/','Index@index');//首页
     Route::get('/welcome','Index@welcome')->name('welcome');//首页中的欢迎也
     Route::get('/logout','Index@logout');//退出页
-    Route::get('/test','Index@test');
+    Route::get('/test','Product@test');
     //用户
     Route::post('/member/add','Members@addMember');
     Route::post('/member/doEdit','Members@doEdit');
@@ -37,6 +37,11 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
     //博客管理
 	Route::post('/product/add','Product@doAdd');
 	Route::post('/product/edit','Product@doEdit');
+
+	Route::get('/category','Product@category');
+	Route::post('/category/list','Product@categoryList');
+	Route::post('/category/modify','Product@modifyCategory');
+	Route::post('/category/add','Product@addCategory');
 	Route::resource('/product','Product');
 
     //评论管理

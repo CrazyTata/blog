@@ -153,7 +153,7 @@
 							var adminRole=this.adminRole
 							console.log(id,adminNames,phones,adminRole)
 							if(adminNames==''||adminRole==''||phones==''||id==''){
-								layer.msg('请先填写必填项',{icon:5})
+								layer.msg('请先填写必填项',{icon:5});return;
 							}
 							if(this.originRole==adminRole && adminNames== this.editLists.name&& phones==this.editLists.telephone){
 								layer.msg('您没有做任何修改',{icon:5})

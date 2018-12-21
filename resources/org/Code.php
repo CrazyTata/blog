@@ -31,7 +31,7 @@ class Code{
     {
         if(empty($this->font))
         {
-            $this->font = base_path().'\public\css\fonts\consola.ttf';
+            $this->font = base_path().'\public\out\consola.ttf';
         }
         $this->create();//生成验证码
         header("Content-type:image/png");

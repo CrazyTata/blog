@@ -70,7 +70,7 @@
 			<dd>
 				<ul>
 					<li><a data-href="{{ asset('/back/product') }}" data-title="博客管理" href="javascript:void(0)">博客管理</a></li>
-					<!-- <li><a data-href="product-category.html" data-title="分类管理" href="javascript:void(0)">分类管理</a></li> -->
+					<li><a data-href="{{ asset('/back/category') }}" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
 					<!-- <li><a data-href="product-list.html" data-title="产品管理" href="javascript:void(0)">产品管理</a></li> -->
 				</ul>
 			</dd>

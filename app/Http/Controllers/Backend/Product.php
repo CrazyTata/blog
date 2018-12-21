@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Models\Backend\Category;
+use App\Http\Models\Backend\Article;
+use App\Http\Controllers\Backend\Base;
+use Illuminate\Support\Facades\Validator;
 /**
  * @note Product management
  * @title Product-management
@@ -13,7 +16,7 @@ use App\Http\Controllers\Controller;
  * @author: tata
  * @date: 2018/12/20 11:33
  */
-class Product extends Controller
+class Product extends Base
 {
     /**
      * @note User Management
@@ -38,6 +41,11 @@ class Product extends Controller
      */
     public function store(Request $request)
     {
+        return Article::getList($request->search??[],[$request->page,$request->size]);
+    }
+
+    public function test(){
+        return Article::getList([],[1,10]);
     }
 
     /**
@@ -113,5 +121,44 @@ class Product extends Controller
      */
     public function doEdit(Request $request){
 
+    }
+
+    public function category(){
+        return view('backend.product.category');
+    }
+
+    public function categoryList(Request $request){
+        return Category::getList([],[$request->page,$request->size]);
+    }
+
+    public function modifyCategory(Request $request){
+        if($request->is_del) return Category::doUpdate($request->except(['_token']));
+        $valadate = Validator::make($input=$request->except(['_token']),[
+            'name'=>'required',
+            'sort'=>'required|numeric',
+            'description'=>'required',
+        ],[
+            'name.required'=>'分类名必须填写',
+            'sort.required'=>'排序必须填写',
+            'sort.numeric'=>'排序必须填写数字',
+            'description.required'=>'描述必须填写'
+        ]);
+        if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
+        return Category::doUpdate($input);
+    }
+
+    public function addCategory(Request $request){
+        $valadate = Validator::make($input=$request->except(['_token']),[
+            'name'=>'required',
+            'sort'=>'required|numeric',
+            'description'=>'required',
+        ],[
+            'name.required'=>'分类名必须填写',
+            'sort.required'=>'排序必须填写',
+            'sort.numeric'=>'排序必须填写数字',
+            'description.required'=>'描述必须填写'
+        ]);
+        if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
+        return Category::insertAll($input);
     }
 }
