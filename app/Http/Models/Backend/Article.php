@@ -28,7 +28,6 @@ class Article extends Model
         $count = DB::table('article')
             ->join('category','article.cate_id','category.id')
             ->join('user','article.member_id','user.id')
-            ->select('article.*','user.name','category.name')
             ->where($map)
             ->where($map1)
             ->count();
@@ -36,7 +35,7 @@ class Article extends Model
         return ['count'=>$count,'info'=>DB::table('article')
             ->join('category','article.cate_id','category.id')
             ->join('user','article.member_id','user.id')
-            ->select('article.*','user.name','category.name')
+            ->select('article.*','user.name','category.name as cate_name')
             ->where($map)
             ->where($map1)
             ->offset(($limit[0]-1)*$limit[1])

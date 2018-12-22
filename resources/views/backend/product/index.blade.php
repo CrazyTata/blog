@@ -29,13 +29,13 @@
 				<td>@{{ sonLists.title }}</td>
 				<td>@{{ sonLists.number }}</td>
 				<td>@{{ sonLists.reply_num }}</td>
-				<td>@{{ sonLists.category }}</td>
+				<td>@{{ sonLists.cate_name }}</td>
 				<td>@{{ sonLists.update_at }}</td>
 				<td>@{{ sonLists.create_at }}</td>
 				<td v-if="sonLists['is_delete'] == 2" class="td-status"><span class="label radius">已停用</span></td>
 				<td v-if="sonLists['is_delete'] == 1" class="td-status"><span class="label label-success radius">已启用</span></td>
 				<td class="td-manage">
-					<a title="查看" href="javascript:;" @click="productShow(sonLists)" data-toggle="modal" data-target="#myModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe667;</i></a>
+					<a title="查看" href="javascript:;" @click="productShow(sonLists)" data-toggle="modal" data-target="#showModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe667;</i></a>
 					<a v-if="sonLists['is_delete'] == 1" style="text-decoration:none" @click="productStart(sonLists.id,sonLists['is_delete'])" href="javascript:;" title="禁用"><i class="Hui-iconfont">&#xe706;</i>
 					</a> 
 					<a v-if="sonLists.is_delete == 2" style="text-decoration:none" @click="productStart(sonLists.id,sonLists.is_delete)" href="javascript:;" title="启用"><i  class="Hui-iconfont">&#xe615;</i>
