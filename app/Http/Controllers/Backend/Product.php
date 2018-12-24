@@ -113,7 +113,23 @@ class Product extends Base
         $valadate = Validator::make($input=$request->except(['_token']),$this->validate_field,$this->validate_msg);
         if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
         $input['member_id'] = session('user') ['id'];
-        return Article::insertAll($input);
+        $input['update_at'] = date('Y-m-d H:i:s');
+        $input['create_at'] = date('Y-m-d H:i:s');
+try{
+    $image['url'] = $input['src'];
+        $image['desc'] = '博客图片';
+        $image['types'] = 1;
+        unset($input['src']);
+
+        $res_img = Images::insertAll($image);
+        return $res_img;
+        if(isset($res_img['code']) && $res_img['code']==1) return Article::insertAll($input);
+        return ['code'=>0,'msg'=>'图片保存错误'];
+}catch(\Exception $e){
+    return $e;
+}
+        
+        
     }
 
     public function uploadFile(){

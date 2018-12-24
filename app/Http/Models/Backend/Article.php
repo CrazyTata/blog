@@ -55,9 +55,14 @@ class Article extends Model
     }
 
     public static function insertAll($data){
+
+         DB::connection()->enableQueryLog();
         if($id = Db::table('article')->where('title',$data['title'])->value('id')) {
             return ['code'=>0,'msg'=>'用户【'.$data['title'].'】在系统中已存在'];
         }
+        // return 11111222;
+        return Db::table('article')->insert($data);
+        return 33333;
         if(false !== Db::table('article')->insert($data)) return ['code'=>1,'msg'=>'添加成功'];
         return ['code'=>0,'msg'=>'添加失败'];
     }
