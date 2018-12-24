@@ -312,6 +312,7 @@
 						search:{name:'',telephone:'',time2:'',time1:''},
 						memberLists:{},
 						groupLists:{},
+						categroyList:{},
 						editLists:{}
 					},
 					methods:{
@@ -374,8 +375,9 @@
 					success:function (msg) {
 						console.log(msg)
 						model.memberList.page=1
-						model.memberList.memberLists = msg
-						model.doPage(msg.count);
+						model.memberList.memberLists = msg.info
+						model.memberList.categroyList = msg.category
+						model.doPage(msg.info.count);
                     }
 				})
             },

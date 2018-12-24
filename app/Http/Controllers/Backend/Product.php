@@ -41,7 +41,9 @@ class Product extends Base
      */
     public function store(Request $request)
     {
-        return Article::getList($request->search??[],[$request->page,$request->size]);
+        $info = Article::getList($request->search??[],[$request->page,$request->size]);
+        $category = Category::getList(['is_del'=>1],[1,1000]);;
+        return compact('info','category');
     }
 
     public function test(){
