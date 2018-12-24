@@ -1,7 +1,7 @@
 ﻿@include('backend.header',['title'=>'文章页'])
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 博客管理 <span class="c-gray en">&gt;</span> 博客管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container " id="category-list">
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" data-toggle="modal" data-target="#addModal" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加博客</a></span> <span class="r">共有数据：<strong>@{{memberLists.count}}</strong> 条</span> </div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:void(0)" data-toggle="modal" data-target="#addModal" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加博客</a></span> <span class="r">共有数据：<strong>@{{memberLists.count}}</strong> 条</span> </div>
 	<table class="table table-border table-bordered table-bg">
 		<thead>
 			<tr>
@@ -35,12 +35,12 @@
 				<td v-if="sonLists['is_delete'] == 2" class="td-status"><span class="label radius">已停用</span></td>
 				<td v-if="sonLists['is_delete'] == 1" class="td-status"><span class="label label-success radius">已启用</span></td>
 				<td class="td-manage">
-					<a title="查看" href="javascript:;" @click="productShow(sonLists)" data-toggle="modal" data-target="#showModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe667;</i></a>
-					<a v-if="sonLists['is_delete'] == 1" style="text-decoration:none" @click="productStart(sonLists.id,sonLists['is_delete'])" href="javascript:;" title="禁用"><i class="Hui-iconfont">&#xe706;</i>
+					<a title="查看" href="javascript:void(0)" @click="productShow(sonLists)" data-toggle="modal" data-target="#showModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe667;</i></a>
+					<a v-if="sonLists['is_delete'] == 1" style="text-decoration:none" @click="productStart(sonLists.id,sonLists['is_delete'])" href="javascript:void(0)" title="禁用"><i class="Hui-iconfont">&#xe706;</i>
 					</a> 
-					<a v-if="sonLists.is_delete == 2" style="text-decoration:none" @click="productStart(sonLists.id,sonLists.is_delete)" href="javascript:;" title="启用"><i  class="Hui-iconfont">&#xe615;</i>
+					<a v-if="sonLists.is_delete == 2" style="text-decoration:none" @click="productStart(sonLists.id,sonLists.is_delete)" href="javascript:void(0)" title="启用"><i  class="Hui-iconfont">&#xe615;</i>
 					</a> 
-					<a title="编辑" href="javascript:;" @click="productEdit(sonLists)" data-toggle="modal" data-target="#myModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> </td>
+					<a title="编辑" href="javascript:void(0)" @click="productEdit(sonLists)" data-toggle="modal" data-target="#myModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> </td>
 					
 			</tr>
 			
@@ -91,7 +91,7 @@
 </div>
 
 <div class="modal fade" id="addModal">
-	<div class="modal-dialog" style="width: 70%">
+	<div class="modal-dialog" style="width: 70%;max-height: 88%;overflow-y: scroll;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
@@ -117,13 +117,11 @@
 	<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类：</label>
 	<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
 		<select v-model='cate_id' class="select">
-			<option value="0">一级分类</option>
-			<option value="1">一级分类</option>
-			<option value="11">├二级分类</option>
-			<option value="12">├二级分类</option>
-			<option value="13">├二级分类</option>
+			<option value="">请选择</option>
+			<option v-for="sonCategory in categroyLists" :value="sonCategory.id">@{{ sonCategory.name }}</option>
 		</select>
-		</span> </div>
+		</span>
+	 </div>
 </div>
 <br>
 <div class="row cl">
@@ -133,104 +131,6 @@
 	</div>
 </div>
 <br>
-<!-- <div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">允许评论：</label>
-	<div class="formControls col-xs-8 col-sm-9 skin-minimal">
-		<div class="check-box">
-			<input type="checkbox" id="checkbox-1">
-			<label for="checkbox-1">&nbsp;</label>
-		</div>
-	</div>
-</div> 
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">产品规格：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="输入长度" value="" class="input-text" style=" width:25%">
-		MM
-		<input type="text" name="" id="" placeholder="输入宽度" value="" class="input-text" style=" width:25%">
-		MM
-		<input type="text" name="" id="" placeholder="输入高度" value="" class="input-text" style=" width:25%">
-		MM </div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">产地：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="" value="" class="input-text">
-	</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">材质：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="" value="" class="input-text">
-	</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">所属供应商：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="" value="" class="input-text">
-	</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">价格计算单位：</label>
-	<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-		<select class="select">
-			<option>请选择</option>
-			<option value="1">件</option>
-			<option value="2">斤</option>
-			<option value="3">KG</option>
-			<option value="4">吨</option>
-			<option value="5">套</option>
-		</select>
-		</span> </div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">产品重量：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-		kg</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">产品展示价格：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-		元</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">市场价格：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-		元</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">成本价格：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-		元</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">最低销售价格：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-		元</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">销售开始时间：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:180px;">
-	</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">销售结束时间：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' })" id="datemax" class="input-text Wdate" style="width:180px;">
-	</div>
-</div>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">产品关键字：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" name="" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="" class="input-text">
-	</div>
-</div>-->
 <div class="row cl">
 	<label class="form-label col-xs-4 col-sm-2">产品摘要：</label>
 	<div class="formControls col-xs-8 col-sm-9">
@@ -240,42 +140,23 @@
 </div>
 <br>
 <div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">缩略图：</label>
+	<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
 	<div class="formControls col-xs-8 col-sm-9">
 		<div class="uploader-thum-container">
 			<div id="fileList" class="uploader-list"></div>
-			<div id="filePicker">选择图片</div>
-			<button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>
+			<button type="button" class="layui-btn btn-primary" id="uploadFiles">
+				<i class="Hui-iconfont">&#xe642;</i>上传图片
+			</button>
+			<img width="200" height="200" id='uploadSrc' src='/no-picture.png' />
 		</div>
 	</div>
 </div>
 <br>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<div class="uploader-list-container">
-			<div class="queueList">
-				<div id="dndArea" class="placeholder">
-					<div id="filePicker-2"></div>
-					<p>或将照片拖到这里，单次最多可选300张</p>
-				</div>
-			</div>
-			<div class="statusBar" style="display:none;">
-				<div class="progress"> <span class="text">0%</span> <span class="percentage"></span> </div>
-				<div class="info"></div>
-				<div class="btns">
-					<div id="filePicker2"></div>
-					<div class="uploadBtn">开始上传</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<br>
+
 <div class="row cl">
 	<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
 	<div class="formControls col-xs-8 col-sm-9"> 
-		<script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
+		<script id="editor" type="text/plain" style="width:100%;height:30%;"></script> 
 	</div>
 </div>
 <br>	
@@ -290,12 +171,20 @@
 	</div>
 </div>
 
+
+
+
 </div>
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="/out/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <script type="text/javascript" src="/out/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
 <script type="text/javascript" src="/out/lib/laypage/1.2/laypage.js"></script>
+
+<script type="text/javascript" src="/out/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="/out/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="/out/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+
 <script type="text/javascript">
 	(function(){
 	    var model = {
@@ -312,8 +201,9 @@
 						search:{name:'',telephone:'',time2:'',time1:''},
 						memberLists:{},
 						groupLists:{},
-						categroyList:{},
-						editLists:{}
+						editLists:{},
+						cate_id:'',
+						categroyLists:{}
 					},
 					methods:{
 						submitForm:function(){
@@ -376,8 +266,8 @@
 						console.log(msg)
 						model.memberList.page=1
 						model.memberList.memberLists = msg.info
-						model.memberList.categroyList = msg.category
-						model.doPage(msg.info.count);
+						model.memberList.categroyLists = msg.category.info
+						model.doPage(msg.count);
                     }
 				})
             },
@@ -477,5 +367,33 @@ layui.use('laydate', function(){
     elem: '#time2' //指定元素
   });
 });
+$(function(){
+	var ue = UE.getEditor('editor');
+});
+
+layui.use('upload', function(){
+  var upload = layui.upload;
+   
+  //执行实例
+  var uploadInst = upload.render({
+    elem: '#uploadFiles' //绑定元素
+    ,url: '/back/product/upload' //上传接口
+    ,data: {'_token':"{{ csrf_token() }}"}
+    ,done: function(res){
+    	if(res.code==1){
+    		$('#uploadSrc').attr('src',res.msg)
+    		layer.msg('上传成功',{icon:6})
+    	}else{
+    		layer.msg(res.msg,{icon:5})
+    	}
+      
+      console.log(res)
+    }
+    ,error: function(){
+      //请求异常回调
+    }
+  });
+});
+
 </script>
 @include('backend.footer')

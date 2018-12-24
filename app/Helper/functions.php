@@ -13,3 +13,11 @@ function getIP(){
     }
     return $cip;
 }
+
+function uploadFile($path,$file){
+    include_once (base_path().'\resources\org\Upload.php');
+    $upload = new Upload(1, $path);//='./upload/product'
+    $code=0;
+    if($upload->upload_file($file)) $code=1; //上传成功
+    return ['code'=>$code,'msg'=>$upload->get_msg($file)];
+}

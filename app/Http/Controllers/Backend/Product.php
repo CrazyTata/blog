@@ -95,6 +95,13 @@ class Product extends Base
 
     }
 
+    public function uploadFile(){
+        $file = $_FILES['file'];
+        $res = uploadFile('./upload/product/',$file);
+        if(isset($res['code'])) return $res;
+        else return ['code'=>0,'msg'=>'网络错误，请稍后重试'];
+    }
+
     //delete back/member/{member}
     public function destroy()
     {

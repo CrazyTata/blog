@@ -42,6 +42,7 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
 	Route::post('/category/list','Product@categoryList');
 	Route::post('/category/modify','Product@modifyCategory');
 	Route::post('/category/add','Product@addCategory');
+	Route::any('/product/upload','Product@uploadFile');
 	Route::resource('/product','Product');
 
     //评论管理
