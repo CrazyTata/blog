@@ -18,6 +18,24 @@ use Illuminate\Support\Facades\Validator;
  */
 class Product extends Base
 {
+    private $validate_field = [
+            'cate_id'=>'required|numeric',
+            'content'=>'required',
+            'sort'=>'required|numeric',
+            'src'=>'required',
+            'title'=>'required',
+            'key_words'=>'required'
+        ];
+    private $validate_msg = [
+            'cate_id.required'=>'分类必须选择',
+            'content.required'=>'文章内容必须填写',
+            'sort.required'=>'排序必须填写',
+            'src.required'=>'图片必须上传',
+            'title.required'=>'标题必须填写',
+            'key_words.required'=>'关键词必须填写',
+            'cate_id.numeric'=>'分类必须是数字',
+            'sort.numeric'=>'排序必须是数字'
+        ];
     /**
      * @note User Management
      * @title User-Manage
@@ -90,9 +108,12 @@ class Product extends Base
      * @author: tata
      * @date: 2018/12/20 10:38
      */
-    public function addMember(Request $request)
+    public function doAdd(Request $request)
     {
-
+        $valadate = Validator::make($input=$request->except(['_token']),$this->validate_field,$this->validate_msg);
+        if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
+        $input['member_id'] = session('user') ['id'];
+        return Article::insertAll($input);
     }
 
     public function uploadFile(){

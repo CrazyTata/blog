@@ -119,7 +119,7 @@
 		<select v-model='cate_id' class="select">
 			<option value="">请选择</option>
 			<option v-for="sonCategory in categroyLists" :value="sonCategory.id">@{{ sonCategory.name }}</option>
-		</select>
+		</select> 
 		</span>
 	 </div>
 </div>
@@ -128,14 +128,6 @@
 	<label class="form-label col-xs-4 col-sm-2">排序值：</label>
 	<div class="formControls col-xs-8 col-sm-9">
 		<input type="text" class="input-text" value="0" placeholder="" name="add_sort">
-	</div>
-</div>
-<br>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">产品摘要：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"></textarea>
-		<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 	</div>
 </div>
 <br>
@@ -225,13 +217,21 @@
 							
 						},
 						submitAdd:function(){
-							var name=$.trim($("input[name=add_name]").val())
+							//add_key_words cate_id add_sort uploadSrc 
+							var title=$.trim($("input[name=add_title]").val())
 							var sort=$.trim($("input[name=add_sort]").val())
-							var desc=$.trim($("input[name=add_desc]").val())
-							if(name==''||sort==''||desc=='') {
+							var words=$.trim($("input[name=add_key_words]").val())
+							var cate_id=this.cate_id
+							var src = $('#uploadSrc').attr('src')
+							var ue = UE.getEditor('editor');
+							var html = ue.getContent();//获取html内容，返回: <p>hello</p>
+							
+							// var txt = ue.getContentTxt();//获取纯文本内容，返回: hello
+							
+							if(title==''||sort==''||words==''||cate_id==''||html==''||src=='') {
 								layer.msg('请先填写必填项',{icon:2});return;
 							}
-							model.doSubmitAdd(name,sort,desc)
+							model.doSubmitAdd(title,sort,words,cate_id,html,src)
 						},
 						productEdit:function(id){
 							this.editLists=id
@@ -291,12 +291,12 @@
                     }
 				})
             },
-            doSubmitAdd:function(name,sort,desc){
+            doSubmitAdd:function(title,sort,words,cate_id,html,src){
             	$.ajax({
-					url:'{{ asset("/back/category/add") }}',
+					url:'{{ asset("/back/product/add") }}',
 					type:'post',
 					dataType:'json',
-					data:{name:name,sort:sort,description:desc,_token:"{{csrf_token()}}"},
+					data:{title:title,sort:sort,key_words:words,cate_id:cate_id,content:html,src:src,_token:"{{csrf_token()}}"},
 					success:function (msg) {
 						console.log(msg)
 						if(msg.code==1){
