@@ -1,5 +1,5 @@
 @include('home.header',['title'=>'首页'])
-<div class="picshow">
+<!-- <div class="picshow">
   <ul>
     <li><a href="/"><i><img src="home/images/b01.jpg"></i>
         <div class="font">
@@ -27,6 +27,15 @@
         </div>
       </a></li>
   </ul>
+</div> -->
+<div class="picshow">
+  <div>
+    <a href="/"><i><img width="100%" height="476px" src="home/images/timg3.jpg"></i>
+        <div class="font">
+          <h3>个人博客模板《早安》</h3>
+        </div>
+      </a>
+  </div>
 </div>
 <article>
   <div class="blogs">
