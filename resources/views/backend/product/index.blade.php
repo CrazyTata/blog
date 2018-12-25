@@ -40,7 +40,7 @@
 					</a> 
 					<a v-if="sonLists.is_delete == 2" style="text-decoration:none" @click="productStart(sonLists.id,sonLists.is_delete)" href="javascript:void(0)" title="启用"><i  class="Hui-iconfont">&#xe615;</i>
 					</a> 
-					<a title="编辑" href="javascript:void(0)" @click="productEdit(sonLists)" data-toggle="modal" data-target="#myModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> </td>
+					<a title="编辑" href="javascript:void(0)" @click="productEdit(sonLists)" data-toggle="modal" data-target="#editModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> </td>
 					
 			</tr>
 			
@@ -48,48 +48,7 @@
 	</table>
 	<div id="pages"></div>
 
-	<div class="modal fade" id="myModal">
-	<div class="modal-dialog" style="width: 70%">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
-				<h4 class="modal-title">编辑</h4>
-			</div>
-			<div class="modal-body">
-				<article class="page-container" id='member-add'>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>分类名：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" class="input-text" :value="editLists.name" placeholder="" id="name" name="name">
-						</div>
-					</div>
-					<br>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>排序：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" class="input-text" :value="editLists.sort" placeholder="" id="sort" name="sort">
-						</div>
-					</div>
-					<br>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>描述：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" class="input-text" :value="editLists.description" placeholder="" id="description" name="description">
-						</div>
-					</div>
-					<br>
-					
-				</article>
-			</div>
-			
-			<div class="modal-footer">
-				<button name="" id="" class="btn btn-primary" @click="submitEdit">保存</button>
-				<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭</button>
-			</div>
-		</div>
-	</div>
-</div>
-
+<!-- pageAdd start-->
 <div class="modal fade" id="addModal">
 	<div class="modal-dialog" style="width: 70%;max-height: 88%;overflow-y: scroll;">
 		<div class="modal-content">
@@ -99,59 +58,59 @@
 			</div>
 			<div class="modal-body">
 				<article class="page-container" id='member-add'>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" class="input-text" value="" placeholder="请填写文章标题" name="add_title">
-	</div>
-</div>
-<br>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">关键词：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" class="input-text" value="" placeholder="多个关键字用英文逗号隔开，限10个关键字" name="add_key_words">
-	</div>
-</div>
-<br>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类：</label>
-	<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-		<select v-model='cate_id' class="select">
-			<option value="">请选择</option>
-			<option v-for="sonCategory in categroyLists" :value="sonCategory.id">@{{ sonCategory.name }}</option>
-		</select> 
-		</span>
-	 </div>
-</div>
-<br>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">排序值：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<input type="text" class="input-text" value="0" placeholder="" name="add_sort">
-	</div>
-</div>
-<br>
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
-	<div class="formControls col-xs-8 col-sm-9">
-		<div class="uploader-thum-container">
-			<div id="fileList" class="uploader-list"></div>
-			<button type="button" class="layui-btn btn-primary" id="uploadFiles">
-				<i class="Hui-iconfont">&#xe642;</i>上传图片
-			</button>
-			<img width="200" height="200" id='uploadSrc' src='/no-picture.png' />
-		</div>
-	</div>
-</div>
-<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" value="" placeholder="请填写文章标题" name="add_title">
+						</div>
+					</div>
+					<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">关键词：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" value="" placeholder="多个关键字用英文逗号隔开，限10个关键字" name="add_key_words">
+						</div>
+					</div>
+					<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类：</label>
+						<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+							<select v-model='cate_id' class="select">
+								<option value="">请选择</option>
+								<option v-for="sonCategory in categroyLists" :value="sonCategory.id">@{{ sonCategory.name }}</option>
+							</select> 
+							</span>
+						 </div>
+					</div>
+					<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">排序值：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" value="0" placeholder="" name="add_sort">
+						</div>
+					</div>
+					<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<div class="uploader-thum-container">
+								<div id="fileList" class="uploader-list"></div>
+								<button type="button" class="layui-btn btn-primary" id="uploadFiles">
+									<i class="Hui-iconfont">&#xe642;</i>上传图片
+								</button>
+								<img width="200" height="200" id='uploadSrc' src='/no-picture.png' />
+							</div>
+						</div>
+					</div>
+					<br>
 
-<div class="row cl">
-	<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
-	<div class="formControls col-xs-8 col-sm-9"> 
-		<script id="editor" type="text/plain" style="width:100%;height:30%;"></script> 
-	</div>
-</div>
-<br>	
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
+						<div class="formControls col-xs-8 col-sm-9"> 
+							<script id="editor" type="text/plain" style="width:100%;height:30%;"></script> 
+						</div>
+					</div>
+					<br>	
 				</article>
 			</div>
 			
@@ -162,10 +121,129 @@
 		</div>
 	</div>
 </div>
+<!-- pageAdd end-->
+<!-- pageEdit start-->
+<div class="modal fade" id="editModal">
+	<div class="modal-dialog" style="width: 70%;max-height: 88%;overflow-y: scroll;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
+				<h4 class="modal-title">修改</h4>
+			</div>
+			<div class="modal-body">
+				<article class="page-container" id='member-add'>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" v-model.trim="editLists.title" placeholder="" name="">
+						</div>
+					</div>
+					<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">关键词：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" v-model.trim="editLists.key_words" placeholder="" name="">
+						</div>
+					</div>
+					<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类：</label>
+						<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+							<select v-model="editLists.cate_id" class="select">
+								<option value="">请选择</option>
+								<option v-for="sonCategory in categroyLists" :value="sonCategory.id">@{{ sonCategory.name }}</option>
+							</select> 
+							</span>
+						 </div>
+					</div>
+					<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">排序值：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" v-model.trim="editLists.sort" value="0" placeholder="" name="">
+						</div>
+					</div>
+					<br>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<div class="uploader-thum-container">
+								<div id="fileList" class="uploader-list"></div>
+								<button type="button" class="layui-btn btn-primary" id="uploadFiles_edit">
+									<i class="Hui-iconfont">&#xe642;</i>上传图片
+								</button>
+								<img width="200" height="200" id='uploadSrc_edit' :src='editLists.src' />
+							</div>
+						</div>
+					</div>
+					<br>
 
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
+						<div class="formControls col-xs-8 col-sm-9"> 
+							<script id="editor_edit"  type="text/plain" style="width:100%;height:30%;"></script> 
+						</div>
+					</div>
+					<br>	
+				</article>
+			</div>
+			
+			<div class="modal-footer">
+				<button name="" id="" class="btn btn-primary" @click="submitEdit">保存</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- pageEdit end-->
+<!-- pageShow start-->
+<div class="modal fade" id="showModal">
+	<div class="modal-dialog" style="width: 70%;max-height: 88%;overflow-y: scroll;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
+				<h4 class="modal-title">文章详情</h4>
+			</div>
+			<div class="modal-body">
+				<article class="page-container" id='member-add'>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" :value="showList.title" readonly>
+						</div>
+					</div>
+					<br>
 
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<div class="uploader-thum-container">
+								<div id="fileList" class="uploader-list"></div>
+								
+								<img width="400" height="400" :src='showList.src' />
+							</div>
+						</div>
+					</div>
+					<br>
 
-
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">文章内容：</label>
+						<div class="formControls col-xs-8 col-sm-9"> 
+							<input type="text" class="input-text" :value="showList.content" readonly>
+						</div>
+					</div>
+					<br>	
+				</article>
+			</div>
+			
+			<div class="modal-footer">
+				<button name="" id="" class="btn btn-primary" @click="submitAdd">保存</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- pageShow end -->
 </div>
 
 <!--请在下方写此页面业务相关的脚本-->
@@ -193,9 +271,11 @@
 						search:{name:'',telephone:'',time2:'',time1:''},
 						memberLists:{},
 						groupLists:{},
-						editLists:{},
+						editLists:{title:'',content:'',src:'',sort:'',cate_id:'',key_words:''},
+						originEditLists:{},
 						cate_id:'',
-						categroyLists:{}
+						categroyLists:{},
+						showList:{}
 					},
 					methods:{
 						submitForm:function(){
@@ -216,6 +296,9 @@
 							}) 
 							
 						},
+						productShow:function(ids){
+							this.showList=ids
+						},
 						submitAdd:function(){
 							//add_key_words cate_id add_sort uploadSrc 
 							var title=$.trim($("input[name=add_title]").val())
@@ -228,27 +311,38 @@
 							
 							// var txt = ue.getContentTxt();//获取纯文本内容，返回: hello
 							
-							if(title==''||sort==''||words==''||cate_id==''||html==''||src=='') {
+							if(title==''||sort==''||words==''||cate_id==''||html==''||src==''||src=='/no-picture.png') {
 								layer.msg('请先填写必填项',{icon:2});return;
 							}
 							model.doSubmitAdd(title,sort,words,cate_id,html,src)
 						},
 						productEdit:function(id){
+							this.originEditLists=id
+							var ue = UE.getEditor('editor_edit');
+							//ueditor  创建完成再进行赋值操作
+							ue.ready(function() {
+								ue.setContent(id.content)
+							});
 							this.editLists=id
+							
 						},
 						submitEdit:function(){
-							var id=this.editLists.id
-							var name=$.trim($("input[name=name]").val())
-							var sort=$.trim($("input[name=sort]").val())
-							var desc=$.trim($("input[name=description]").val())
-							console.log(id,name,sort,desc)
-							if(name==''||sort==''||desc=='') {
+							var src = $('#uploadSrc_edit').attr('src')
+							var ue = UE.getEditor('editor_edit');
+							var html = ue.getContent();//获取html内容，返回: <p>hello</p>
+							
+							if(this.editLists.title==''||this.editLists.key_words==''||this.editLists.cate_id==''||html==''||src=='') {
 								layer.msg('请先填写必填项',{icon:2});return;
 							}
-							if(desc==this.editLists.desc && name== this.editLists.name&& sort==this.editLists.sort){
-								layer.msg('您没有做任何修改',{icon:5})
-							}
-							model.doSubmitEdit(id,name,sort,desc)
+							// console.log(this.editLists)
+							// console.log(this.originEditLists)
+							// if(this.editLists.title==this.originEditLists.title&&this.editLists.sort==this.originEditLists.sort&&this.editLists.key_words==this.originEditLists.key_words&&this.editLists.cate_id==this.originEditLists.cate_id&&html==this.originEditLists.content&&src==this.originEditLists.src){
+							// 	layer.msg('您没有做任何修改',{icon:5});return;
+							// }
+							this.editLists.content=html
+							this.editLists.src=src
+							// console.log(this.editLists);return;
+							model.doSubmitEdit(this.editLists)
 						}
 					},
 					created:function () {
@@ -277,10 +371,10 @@
             		type = 1
             	}
             	$.ajax({
-					url:'{{ asset("/back/category/modify") }}',
-					type:'post',
+					url:'{{ asset("/back/product/create") }}',
+					type:'get',
 					dataType:'json',
-					data:{id:id,is_del:type,_token:"{{csrf_token()}}"},
+					data:{id:id,is_delete:type},
 					success:function (msg) {
 						if(msg.code==1){
 							layer.msg(msg.msg,{icon:6})
@@ -309,17 +403,19 @@
                     }
 				})
             },
-			doSubmitEdit:function(id,name,sort,desc){
+			doSubmitEdit:function(data){
+				data._token = "{{ csrf_token() }}";
 				$.ajax({
-					url:'{{ asset("/back/category/modify") }}',
+					url:'{{ asset("/back/product/edit") }}',
 					type:'post',
 					dataType:'json',
-					data:{id:id,name:name,sort:sort,description:desc,_token:"{{ csrf_token() }}"},
+					data:data,
 					success:function (msg) {
+						console.log(msg)
 						if(msg.code==1){
 							layer.msg(msg.msg,{icon:6})
 							model.query(model.memberList.page,model.memberList.size,model.memberList.search)
-							$('#myModal').hide()
+							$('#editModal').hide()
 						}else{
 							layer.msg(msg.msg,{icon:5})
 						}
@@ -373,7 +469,7 @@ $(function(){
 
 layui.use('upload', function(){
   var upload = layui.upload;
-   
+  var upload1 = layui.upload;
   //执行实例
   var uploadInst = upload.render({
     elem: '#uploadFiles' //绑定元素
@@ -382,6 +478,27 @@ layui.use('upload', function(){
     ,done: function(res){
     	if(res.code==1){
     		$('#uploadSrc').attr('src',res.msg)
+    		layer.msg('上传成功',{icon:6})
+    	}else{
+    		layer.msg(res.msg,{icon:5})
+    	}
+      
+      console.log(res)
+    }
+    ,error: function(){
+      //请求异常回调
+    }
+  });
+
+
+  //执行实例
+  var uploadInst1 = upload1.render({
+    elem: '#uploadFiles_edit' //绑定元素
+    ,url: '/back/product/upload' //上传接口
+    ,data: {'_token':"{{ csrf_token() }}"}
+    ,done: function(res){
+    	if(res.code==1){
+    		$('#uploadSrc_edit').attr('src',res.msg)
     		layer.msg('上传成功',{icon:6})
     	}else{
     		layer.msg(res.msg,{icon:5})

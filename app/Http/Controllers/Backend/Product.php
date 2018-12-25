@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Models\Backend\Category;
 use App\Http\Models\Backend\Article;
+use App\Http\Models\Backend\Images;
 use App\Http\Controllers\Backend\Base;
 use Illuminate\Support\Facades\Validator;
 /**
@@ -60,7 +62,7 @@ class Product extends Base
     public function store(Request $request)
     {
         $info = Article::getList($request->search??[],[$request->page,$request->size]);
-        $category = Category::getList(['is_del'=>1],[1,1000]);;
+        $category = Category::getList(['is_del'=>1],[1,1000]);
         return compact('info','category');
     }
 
@@ -78,6 +80,7 @@ class Product extends Base
      */
     public function create(Request $request)
     {
+        return Article::doUpdate($request->all());
     }
 
 
@@ -110,24 +113,23 @@ class Product extends Base
      */
     public function doAdd(Request $request)
     {
+        //validate form
         $valadate = Validator::make($input=$request->except(['_token']),$this->validate_field,$this->validate_msg);
         if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
         $input['member_id'] = session('user') ['id'];
         $input['update_at'] = date('Y-m-d H:i:s');
         $input['create_at'] = date('Y-m-d H:i:s');
-try{
-    $image['url'] = $input['src'];
+        $image['url'] = $input['src'];
         $image['desc'] = '博客图片';
         $image['types'] = 1;
         unset($input['src']);
-
-        $res_img = Images::insertAll($image);
-        return $res_img;
-        if(isset($res_img['code']) && $res_img['code']==1) return Article::insertAll($input);
+        //save image than save article info
+        if($img_id=Images::insertAll($image)){
+            $input['image_id'] = $img_id;
+            return Article::insertAll($input);
+        }
         return ['code'=>0,'msg'=>'图片保存错误'];
-}catch(\Exception $e){
-    return $e;
-}
+
         
         
     }
@@ -166,7 +168,40 @@ try{
      * @date: 2018/12/20 11:08
      */
     public function doEdit(Request $request){
-
+        $valadate = Validator::make($input=$request->only(['cate_id','content','id','image_id','key_words','sort','src','title']),$this->validate_field,$this->validate_msg);
+        if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
+         $input['member_id'] = session('user') ['id'];
+        $input['update_at'] = date('Y-m-d H:i:s');
+        $image['url'] = $input['src'];
+        $image['desc'] = '博客图片';
+        $image['types'] = 1;
+        $image_id = $input['image_id'];
+        unset($input['src']);
+        $image_info = Images::getInfoById($image_id);
+        DB::beginTransaction();
+        try{
+            if($image_info->url!=$image['url']){
+                //delete image from database
+                Images::doDelete($image_id);   
+                // insert a new info to database
+                $img_id = Images::insertAll($image);
+                unset($input['image_id']);
+                $input['image_id'] = $img_id;
+                //delete the image file
+                @unlink($image_info->url);
+            }
+            // update the article
+            Article::doUpdate($input);
+            DB::commit();
+            return ['code'=>1,'msg'=>'操作成功'];
+        }catch(\Execption $e){
+            DB::rollBack();
+            return ['code'=>0,'msg'=>$e->getMessage()];
+        }
+        
+       
+       
+        return Article::doUpdate($input);
     }
 
     public function category(){

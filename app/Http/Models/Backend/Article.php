@@ -28,6 +28,7 @@ class Article extends Model
         $count = DB::table('article')
             ->join('category','article.cate_id','category.id')
             ->join('user','article.member_id','user.id')
+            ->join('images','article.image_id','images.id')
             ->where($map)
             ->where($map1)
             ->count();
@@ -35,7 +36,8 @@ class Article extends Model
         return ['count'=>$count,'info'=>DB::table('article')
             ->join('category','article.cate_id','category.id')
             ->join('user','article.member_id','user.id')
-            ->select('article.*','user.name','category.name as cate_name')
+            ->join('images','article.image_id','images.id')
+            ->select('article.*','user.name','category.name as cate_name','images.url as src')
             ->where($map)
             ->where($map1)
             ->offset(($limit[0]-1)*$limit[1])
@@ -50,19 +52,14 @@ class Article extends Model
     {
         $id = $data['id'];
         unset($data['id']);
-        if(false !== Db::table('user')->where('id',$id)->update($data)) return ['code'=>1,'msg'=>'修改成功'];
+        if(false !== Db::table('article')->where('id',$id)->update($data)) return ['code'=>1,'msg'=>'修改成功'];
         return ['code'=>0,'msg'=>'发生未知错误，请稍后重试'];
     }
 
     public static function insertAll($data){
-
-         DB::connection()->enableQueryLog();
         if($id = Db::table('article')->where('title',$data['title'])->value('id')) {
             return ['code'=>0,'msg'=>'用户【'.$data['title'].'】在系统中已存在'];
         }
-        // return 11111222;
-        return Db::table('article')->insert($data);
-        return 33333;
         if(false !== Db::table('article')->insert($data)) return ['code'=>1,'msg'=>'添加成功'];
         return ['code'=>0,'msg'=>'添加失败'];
     }
