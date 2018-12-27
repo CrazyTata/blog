@@ -6,13 +6,13 @@
 	基本设置
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
-<div class="page-container">
+<div class="page-container system-base">
 	<form class="form form-horizontal" id="form-article-add">
 		<div id="tab-system" class="HuiTab">
 			<div class="tabBar cl">
 				<span>基本设置</span>
-				<span>安全设置</span>
-				<span>邮件设置</span>
+				<span>外链设置</span>
+				<span>站长信息设置</span>
 				<span>其他设置</span>
 			</div>
 			<div class="tabCon">
@@ -156,6 +156,41 @@ $(function(){
 	$("#tab-system").Huitab({
 		index:0
 	});
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	var model = {
+		initial:function(){
+			model.global();
+			model.bind();
+		},
+		global:function(){
+			model.father = new Vue({
+				el:'.system-base',
+				data:{
+					list:{},
+					systemBase:{}
+				},
+				methods:{
+
+				},
+				created:function(){
+					model.query()
+				}
+			})
+		},
+		query:function(){
+			$.get("{{ asset('/back/system/base') }}",{},function(msg){
+				model.systemBase=msg
+			})
+		},
+		bind:function(){
+
+		}
+	}
+
+	model.initial()
 });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

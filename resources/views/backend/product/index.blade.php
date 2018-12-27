@@ -198,7 +198,7 @@
 <!-- pageEdit end-->
 <!-- pageShow start-->
 <div class="modal fade" id="showModal">
-	<div class="modal-dialog" style="width: 70%;max-height: 88%;overflow-y: scroll;">
+	<div class="modal-dialog" style="width: 90%;max-height: 88%;overflow-y: scroll;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
@@ -229,7 +229,9 @@
 					<div class="row cl">
 						<label class="form-label col-xs-4 col-sm-2">文章内容：</label>
 						<div class="formControls col-xs-8 col-sm-9"> 
-							<input type="text" class="input-text" :value="showList.content" readonly>
+							<textarea rows="40" cols="100" readonly>
+								@{{showList.content}}
+							</textarea>
 						</div>
 					</div>
 					<br>	
@@ -395,6 +397,7 @@
 						console.log(msg)
 						if(msg.code==1){
 							layer.msg(msg.msg,{icon:6})
+							window.location.href=location.href
 							model.query(model.memberList.page,model.memberList.size,model.memberList.search)
 							$('#addModal').hide()
 						}else{

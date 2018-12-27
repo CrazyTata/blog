@@ -26,8 +26,8 @@
 						<a href="#" class="dropDown_A">{{ session('user')['name'] }} <i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
 							<li><a data-toggle="modal" data-target="#myModal">修改密码</a></li>
-							<li><a href="{{ asset('/back/logout') }}">切换账户</a></li>
-							<li><a href="{{ asset('/back/logout') }}">退出</a></li>
+							<li><a href="{{ url('/back/logout') }}">切换账户</a></li>
+							<li><a href="{{ url('/back/logout') }}">退出</a></li>
 						</ul>
 					</li>
 					<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
@@ -52,7 +52,7 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{{ asset('/back/member') }}" data-title="用户管理" href="javascript:void(0)">用户管理</a></li>
+					<li><a data-href="{{ url('/back/member') }}" data-title="用户管理" href="javascript:void(0)">用户管理</a></li>
 					<li><a data-href="" data-title="用户组管理" href="javascript:void(0)">用户组管理</a></li>
 				</ul>
 			</dd>
@@ -69,8 +69,8 @@
 			<dt><i class="Hui-iconfont">&#xe620;</i> 博客管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{{ asset('/back/product') }}" data-title="博客管理" href="javascript:void(0)">博客管理</a></li>
-					<li><a data-href="{{ asset('/back/category') }}" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
+					<li><a data-href="{{ url('/back/product') }}" data-title="博客管理" href="javascript:void(0)">博客管理</a></li>
+					<li><a data-href="{{ url('/back/category') }}" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
 					<!-- <li><a data-href="product-list.html" data-title="产品管理" href="javascript:void(0)">产品管理</a></li> -->
 				</ul>
 			</dd>
@@ -79,7 +79,7 @@
 			<dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{{ asset('/back/comment') }}" data-title="评论列表" href="javascript:;">评论列表</a></li>
+					<li><a data-href="{{ url('/back/comment') }}" data-title="评论列表" href="javascript:;">评论列表</a></li>
 					<!-- <li><a data-href="feedback-list.html" data-title="意见反馈" href="javascript:void(0)">意见反馈</a></li> -->
 				</ul>
 			</dd>
@@ -126,7 +126,7 @@
 			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="system-base.html" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
+					<li><a data-href="{{ url('/back/system') }}" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
 					<li><a data-href="system-category.html" data-title="栏目管理" href="javascript:void(0)">栏目管理</a></li>
 					<li><a data-href="system-data.html" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>
 					<li><a data-href="system-shielding.html" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>

@@ -10,7 +10,7 @@
 .picshow li .font::before { top: 14%; right: 5%; bottom: 14%; left: 5%; border-top: 1px solid #fff; border-bottom: 1px solid #fff; -webkit-transform: scale(0, 1); -moz-transform: scale(0, 1); -o-transform: scale(0, 1); transform: scale(0, 1); -webkit-transform-origin: 0 0; -moz-transform-origin: 0 0; -o-transform-origin: 0 0; transform-origin: 0 0 }
 .picshow li .font::after { top: 8%; right: 10%; bottom: 8%; left: 10%; border-right: 1px solid #fff; border-left: 1px solid #fff; -webkit-transform: scale(1, 0); -moz-transform: scale(1, 0); -o-transform: scale(1, 0); transform: scale(1, 0); -webkit-transform-origin: 100% 0; -moz-transform-origin: 100% 0; -o-transform-origin: 100% 0; transform-origin: 100% 0 }
 .picshow .font h3 { font-size: 16px; font-weight: 700; text-align: center; width: 80%; position: absolute; top: 50%; left: 10%; background: rgba(0,0,0,0.5); line-height: 1.9; -webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out; -ms-transition: all .5s ease-in-out; transition: all .5s ease-in-out; overflow: hidden; opacity: 0 }
-.picshow:hover .font h3 { top: 42%; opacity: 1 }
+.picshow:hover .font h3 { top: 30%; opacity: 1 }
 article { width: 1200px; margin: auto }
 /* rightbox */
 .blogs { float: left; width: 70%; overflow: hidden; }

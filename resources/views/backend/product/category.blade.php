@@ -5,7 +5,7 @@
 	<table class="table table-border table-bordered table-bg">
 		<thead>
 			<tr>
-				<th scope="col" colspan="9">员工列表</th>
+				<th scope="col" colspan="9">分类列表</th>
 			</tr>
 			<tr class="text-c">
 				<th width="25"><input type="checkbox" name="" value=""></th>

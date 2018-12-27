@@ -53,6 +53,9 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
 
     //系统管理
     Route::resource('/system','System');
+    Route::resource('/system/base','System@baseInfo');
+    // Route::resource('/system','System');
+    
 });
 Route::get('/back/setCode','Backend\Index@setCode');
 Route::any('/back/login','Backend\Index@login');
