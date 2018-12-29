@@ -1,27 +1,27 @@
-﻿@include('backend.header',['title'=>'基本设置'])
+@include('backend.header',['title'=>'基本设置'])
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
 	<span class="c-gray en">&gt;</span>
 	系统管理
 	<span class="c-gray en">&gt;</span>
-	基本设置
+	站长设置
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
-<div class="page-container system-base">
+<div class="page-container system-boss">
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
 						<span class="c-red">*</span>
-						网站名称：</label>
+						昵称：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" v-model.trim="systemBase.website_title" class="input-text">
+						<input type="text" v-model.trim="systemBase.nickname" class="input-text">
 					</div>
 				</div>
 				<br>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
 						<span class="c-red">*</span>
-						关键词：</label>
+						姓名：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" v-model.trim="systemBase.website_keywords" class="input-text">
+						<input type="text" v-model.trim="systemBase.name" class="input-text">
 					</div>
 				</div>
 				<br>
@@ -30,40 +30,45 @@
 						<span class="c-red">*</span>
 						描述：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" v-model.trim="systemBase.website_description" class="input-text">
+						<input type="text" v-model.trim="systemBase.description" class="input-text">
 					</div>
 				</div>
 				<br>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
 						<span class="c-red">*</span>
-						网站域名：</label>
+						工作：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" v-model.trim="systemBase.website_name" class="input-text">
+						<input type="text" v-model.trim="systemBase.job" class="input-text">
 					</div>
 				</div>
 				<br>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
 						<span class="c-red">*</span>
-						底部版权信息：</label>
+						mail：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" v-model.trim="systemBase.website_copyright" class="input-text">
+						<input type="text" v-model.trim="systemBase.mail" class="input-text">
 					</div>
 				</div>
 				<br>
 				<div class="row cl">
-					<label class="form-label col-xs-4 col-sm-2">备案号：</label>
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>QQ：</label>
 					<div class="formControls col-xs-8 col-sm-9">
-						<input type="text" v-model.trim="systemBase.website_icp" class="input-text">
+						<input type="text" v-model.trim="systemBase.qq" class="input-text">
 					</div>
 				</div>
 				<br>
 				<div class="row cl">
-					<label class="form-label col-xs-4 col-sm-2">统计代码：</label>
+					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>微信：</label>
+					
 					<div class="formControls col-xs-8 col-sm-9">
-						<textarea v-model.trim='systemBase.website_tongji' class="textarea"></textarea>
+						<div class="uploader-thum-container">
+							<div id="fileList" class="uploader-list"></div>
+							<img width="400" height="400" id="fileSrc" :src="systemBase.src" />
+						</div>
 					</div>
+					
 				</div>
 			<br>
 		<div class="row cl">
@@ -88,21 +93,23 @@ $(function(){
 		},
 		global:function(){
 			model.father = new Vue({
-				el:'.system-base',
+				el:'.system-boss',
 				data:{
 					list:{},
 					systemBase:{
-						website_title:'',
-						website_keywords:'',
-						website_description:'',
-						website_name:'',
-						website_copyright:'',
-						website_icp:'',
-						website_tongji:''
+						nickname:'',
+						name:'',
+						job:'',
+						description:'',
+						mail:'',
+						qq:'',
+						wechat:'',
+						src:'/no-picture.png'
 					}
 				},
 				methods:{
 					configSave:function(){
+						this.systemBase.src=$('#fileSrc').attr('src')
 						model.doConfigSave(this.systemBase)
 					}
 				},
@@ -112,13 +119,13 @@ $(function(){
 			})
 		},
 		query:function(){
-			$.get("{{ asset('/back/system/1') }}",{},function(msg){
+			$.get("{{ asset('/back/system/2') }}",{},function(msg){
 				model.father.systemBase=msg
 			})
 		},
 		doConfigSave:function(info){
 			info._token="{{ csrf_token() }}"
-			info.id=1
+			info.id=2
 			$.post("{{ asset('/back/system') }}",info,function(msg){
 				console.log(msg)
 				if(msg.code==1){
@@ -135,6 +142,31 @@ $(function(){
 	}
 
 	model.initial()
+});
+</script>
+
+<script type="text/javascript">
+	layui.use('upload', function(){
+	var upload = layui.upload;
+	//执行实例
+	var uploadInst = upload.render({
+	elem: '#uploadFiles' //绑定元素
+	,url: '/back/product/upload' //上传接口
+	,data: {'_token':"{{ csrf_token() }}"}
+	,done: function(res){
+		if(res.code==1){
+			$('#fileSrc').attr('src',res.msg)
+			layer.msg('上传成功',{icon:6})
+		}else{
+			layer.msg(res.msg,{icon:5})
+		}
+	  
+	  console.log(res)
+	}
+	,error: function(){
+	  //请求异常回调
+	}
+	});
 });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

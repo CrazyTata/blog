@@ -52,8 +52,8 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
 	Route::resource('/statistics','Statistics');
 
     //系统管理
+    Route::view('/system/boss','backend\system\boss');
     Route::resource('/system','System');
-    Route::resource('/system/base','System@baseInfo');
     // Route::resource('/system','System');
     
 });

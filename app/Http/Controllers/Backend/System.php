@@ -21,8 +21,8 @@ class System extends Controller
     }
 
     //网站的基本配置信息
-    public function baseInfo(){
-    	return Config::first()
+    public function show($id){
+    	return json_decode(Config::where('id',$id)->value('configs'),true);
     }
 
     /**
@@ -35,6 +35,8 @@ class System extends Controller
      */
     public function store(Request $request)
     {
-        return Config::where('id',1)->update(['configs' => json_encode($request->except(['_token']))]);
+    	$id = $request->only(['id']);
+        if(false !== Config::where('id',$id)->update(['configs' => json_encode($request->except(['_token','id']),JSON_UNESCAPED_UNICODE)])) return ['code'=>1,'msg'=>'保存成功！'];
+        else return ['code'=>0,'msg'=>'保存失败！'];
     }
 }
