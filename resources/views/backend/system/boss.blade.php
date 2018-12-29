@@ -65,6 +65,9 @@
 					<div class="formControls col-xs-8 col-sm-9">
 						<div class="uploader-thum-container">
 							<div id="fileList" class="uploader-list"></div>
+							<button type="button" class="layui-btn btn-primary" id="uploadFiles">
+									<i class="Hui-iconfont">&#xe642;</i>上传图片
+								</button>
 							<img width="400" height="400" id="fileSrc" :src="systemBase.src" />
 						</div>
 					</div>
@@ -104,7 +107,7 @@ $(function(){
 						mail:'',
 						qq:'',
 						wechat:'',
-						src:'/no-picture.png'
+						src:''
 					}
 				},
 				methods:{

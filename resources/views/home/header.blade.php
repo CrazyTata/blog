@@ -34,22 +34,16 @@
         <div id="mnav">
             <h2><span class="navicon"></span></h2>
             <ul>
-                <li><a href="/">网站首页</a></li>
-                {{--<li><a href="/share">模板分享</a></li>--}}
-                {{--<li><a href="/study">学无止境</a></li>--}}
-                {{--<li><a href="/life">慢生活</a></li>--}}
-                <li><a href="/message">留言</a></li>
-                <li><a href="/about">关于我</a></li>
+                @foreach($nav as $k=>$v)
+                <li><a href=" {{url($v->url)}} ">{{ $v->name }}</a></li>
+                @endforeach
             </ul>
         </div>
         <nav class="topnav" id="topnav">
             <ul>
-                <li><a href="/">网站首页</a></li>
-                {{--<li><a href="/share">模板分享</a></li>--}}
-                {{--<li><a href="/study">学无止境</a></li>--}}
-                {{--<li><a href="/life">慢生活</a></li>--}}
-                <li><a href="/message">留言</a></li>
-                <li><a href="/about">关于我</a></li>
+                @foreach($nav as $k=>$v)
+                <li><a href=" {{url($v->url)}} ">{{ $v->name }}</a></li>
+                @endforeach
             </ul>
         </nav>
     </div>

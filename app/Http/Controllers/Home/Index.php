@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Http\Controllers\Backend\Base;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Home\Base;
 use Illuminate\Support\Facades\View;
+use App\Http\Models\Backend\Nav;
 
-class IndexController extends Base
+class Index extends Base
 {
     // public function __construct()
     // {
     //     $this->middleware('guest')->except('logout');
     // }
     public function index(){
-        return view('Home.index');
+        $nav=Nav::where('is_delete',1)->orderBy('sort','desc')->get();
+
+        return view('Home.index',compact('nav'));
     }
 
     public function blog(){

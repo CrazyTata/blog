@@ -46,6 +46,33 @@
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
 						<span class="c-red">*</span>
+						网站默认图片：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<div class="uploader-thum-container">
+							<div id="fileList" class="uploader-list"></div>
+							<button type="button" class="layui-btn btn-primary" id="uploadFiles">
+									<i class="Hui-iconfont">&#xe642;</i>上传图片
+								</button>
+							<img width="400" height="400" id="fileSrc" :src="systemBase.src" />
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">
+						<span class="c-red">*</span>
+						网站是否开启：</label>
+					<div class="formControls col-xs-8 col-sm-9">
+						<input type='radio' id='one' value='1' v-model='systemBase.website_use'/>
+						<label for='one'>开启</label>
+						<input type='radio' id='two' value='0' v-model='systemBase.website_use'/>
+						<label for='two'>关闭</label>
+					</div>
+				</div>
+				<br>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">
+						<span class="c-red">*</span>
 						底部版权信息：</label>
 					<div class="formControls col-xs-8 col-sm-9">
 						<input type="text" v-model.trim="systemBase.website_copyright" class="input-text">
@@ -98,11 +125,14 @@ $(function(){
 						website_name:'',
 						website_copyright:'',
 						website_icp:'',
-						website_tongji:''
+						website_tongji:'',
+						website_use:'',
+						src:''
 					}
 				},
 				methods:{
 					configSave:function(){
+						this.systemBase.src = $('#fileSrc').attr('src')
 						model.doConfigSave(this.systemBase)
 					}
 				},
@@ -135,6 +165,30 @@ $(function(){
 	}
 
 	model.initial()
+});
+</script>
+<script type="text/javascript">
+	layui.use('upload', function(){
+	var upload = layui.upload;
+	//执行实例
+	var uploadInst = upload.render({
+	elem: '#uploadFiles' //绑定元素
+	,url: '/back/product/upload' //上传接口
+	,data: {'_token':"{{ csrf_token() }}"}
+	,done: function(res){
+		if(res.code==1){
+			$('#fileSrc').attr('src',res.msg)
+			layer.msg('上传成功',{icon:6})
+		}else{
+			layer.msg(res.msg,{icon:5})
+		}
+	  
+	  console.log(res)
+	}
+	,error: function(){
+	  //请求异常回调
+	}
+	});
 });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

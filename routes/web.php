@@ -53,6 +53,12 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
 
     //系统管理
     Route::view('/system/boss','backend\system\boss');
+    Route::view('/system/nav','backend\system\nav');
+
+    Route::get('/system/navList','System@navList');
+    Route::post('/system/addNav','System@addNav');
+    Route::post('/system/modifyNav','System@modifyNav');
+
     Route::resource('/system','System');
     // Route::resource('/system','System');
     
@@ -66,8 +72,9 @@ Route::any('/back/modpass','Backend\Index@modifyPass');
 //前台路由组
 
 Route::group(['namespace'=>'Home','middleware'=>['web']],function (){
-    Route::get('/','IndexController@index')->name('index');//首页
-    Route::get('/blog','IndexController@blog')->name('blog');//文章
-    Route::get('/about','IndexController@about')->name('about');//关于我
-    Route::get('/message','IndexController@message')->name('message');//留言
+    Route::get('/','Index@index')->name('index');//首页
+    Route::get('/blog','Index@blog')->name('blog');//文章
+    Route::get('/about','Index@about')->name('about');//关于我
+    Route::get('/message','Index@message')->name('message');//留言
+    Route::get('/cate/{id}','Category@cate')->name('message');//留言
 });
