@@ -30,11 +30,7 @@
 </div> -->
 <div class="picshow">
   <div>
-    <a href="/"><i><img width="100%" height="476px" src="home/images/timg3.jpg"></i>
-        <div class="font">
-          <h3>个人博客模板《早安》</h3>
-        </div>
-      </a>
+    <a href="/"><i><img width="100%" height="476px" src="home/images/timg3.jpg"></i></a>
   </div>
 </div>
 <article>
@@ -134,9 +130,9 @@
   <div class="sidebar">
     <div class="about">
       <div class="avatar"> <img src="home/images/avatar.jpg" alt=""> </div>
-      <p class="abname">tata | 王模刚</p>
-      <p class="abposition">PHP程序员</p>
-      <div class="abtext"> 一个80后草根女站长！09年入行。一直潜心研究web前端技术，一边工作一边积累经验，分享一些个人博客模板，以及SEO优化等心得。 </div>
+      <p class="abname">{{ $boss['nickname'] }} | {{ $boss['name'] }}</p>
+      <p class="abposition">{{ $boss['job'] }}</p>
+      <div class="abtext"> {{ $boss['description'] }} </div>
     </div>
     <div class="search">
       <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
@@ -202,9 +198,10 @@
     <div class="links">
       <h2 class="hometitle">友情链接</h2>
       <ul>
-        <li><a href="http://www.yangqq.com" title="tata个人博客">tata个人博客</a></li>
-        <li><a href="http://www.yangqq.com" title="tata个人博客">tata个人博客</a></li>
-        <li><a href="http://www.yangqq.com" title="tata个人博客">tata个人博客</a></li>
+
+        @foreach($nav as $k=>$v)
+        <li><a href="{{ url($v->link) }}" title="{{ $v->name }}">{{ $v->name }}</a></li>
+        @endforeach
       </ul>
     </div>
     <div class="weixin">

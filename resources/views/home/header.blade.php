@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{{ $title }}_tata个人博客 - 一个站在php代码中学习的个人博客网站</title>
-    <meta name="keywords" content="个人博客,tata个人博客,个人博客模板,tata" />
-    <meta name="description" content="tata个人博客" />
+    <title>{{ $title }} {{ $base['website_title'] }}</title>
+    <meta name="keywords" content="{{ $base['website_keywords'] }}" />
+    <meta name="description" content="{{ $base['website_description'] }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="home/css/base.css" rel="stylesheet">
     <link href="home/css/index.css" rel="stylesheet">

@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Home\Base;
 use Illuminate\Support\Facades\View;
-use App\Http\Models\Backend\Nav;
-
+use App\Http\Models\Backend\Config;
+use App\Http\Models\Backend\Friend;
 class Index extends Base
 {
     // public function __construct()
@@ -13,9 +13,8 @@ class Index extends Base
     //     $this->middleware('guest')->except('logout');
     // }
     public function index(){
-        $nav=Nav::where('is_delete',1)->orderBy('sort','desc')->get();
-
-        return view('Home.index',compact('nav'));
+        $boss = json_decode(Config::where('name','站长配置')->value('configs'),true);
+        return view('Home.index',compact('boss'));
     }
 
     public function blog(){

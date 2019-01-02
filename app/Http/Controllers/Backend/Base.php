@@ -20,8 +20,7 @@ class Base extends Controller
     	$id--;
     	$names = ['基本配置','站长配置','其它配置'];
     	$name = $names[$id];
-    	if(in_array($id, $names)) return json_decode(Config::where('name',$name)->value('configs'),true);
-        return [];
+    	return json_decode(Config::where('name',$name)->value('configs'),true);
     }
 
 }

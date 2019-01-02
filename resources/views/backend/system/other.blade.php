@@ -3,7 +3,7 @@
 	<span class="c-gray en">&gt;</span>
 	系统管理
 	<span class="c-gray en">&gt;</span>
-	站长设置
+	其它设置
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container system-boss">
@@ -59,21 +59,7 @@
 					</div>
 				</div>
 				<br>
-				<div class="row cl">
-					<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>微信：</label>
-					
-					<div class="formControls col-xs-8 col-sm-9">
-						<div class="uploader-thum-container">
-							<div id="fileList" class="uploader-list"></div>
-							<button type="button" class="layui-btn btn-primary" id="uploadFiles">
-									<i class="Hui-iconfont">&#xe642;</i>上传图片
-								</button>
-							<img width="400" height="400" id="fileSrc" :src="systemBase.src" />
-						</div>
-					</div>
-					
-				</div>
-			<br>
+
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
 				<input type="button" @click="configSave" class="btn btn-primary radius" value="保存" name="">
@@ -121,14 +107,14 @@ $(function(){
 			})
 		},
 		query:function(){
-			$.get("{{ asset('/back/system/2') }}",{},function(msg){
+			$.get("{{ asset('/back/system/3') }}",{},function(msg){
 				console.log(msg)
 				model.father.systemBase=msg
 			})
 		},
 		doConfigSave:function(info){
 			info._token="{{ csrf_token() }}"
-			info.id=2
+			info.id=3
 			console.log(info)
 			$.post("{{ asset('/back/system') }}",info,function(msg){
 				console.log(msg)

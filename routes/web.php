@@ -54,10 +54,15 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
     //系统管理
     Route::view('/system/boss','backend\system\boss');
     Route::view('/system/nav','backend\system\nav');
-
+    Route::view('/system/link','backend\system\link');
+	Route::view('/system/other','backend\system\other');
     Route::get('/system/navList','System@navList');
     Route::post('/system/addNav','System@addNav');
     Route::post('/system/modifyNav','System@modifyNav');
+
+	Route::get('/system/linkList','System@linkList');
+    Route::post('/system/addLink','System@addLink');
+    Route::post('/system/modifyLink','System@modifyLink');
 
     Route::resource('/system','System');
     // Route::resource('/system','System');

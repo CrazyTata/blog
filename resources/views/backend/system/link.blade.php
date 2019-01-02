@@ -1,18 +1,16 @@
-@include('backend.header',['title'=>'导航设置'])
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统设置 <span class="c-gray en">&gt;</span> 导航设置 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+@include('backend.header',['title'=>'友链设置'])
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统设置 <span class="c-gray en">&gt;</span> 友链设置 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container " id="category-list">
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" data-toggle="modal" data-target="#addModal" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加导航</a></span> <span class="r">共有数据：<strong>@{{memberLists.count}}</strong> 条</span> </div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" data-toggle="modal" data-target="#addModal" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加友链</a></span> <span class="r">共有数据：<strong>@{{memberLists.count}}</strong> 条</span> </div>
 	<table class="table table-border table-bordered table-bg">
 		<thead>
 		<tr>
-			<th scope="col" colspan="9">导航列表</th>
+			<th scope="col" colspan="9">友链列表</th>
 		</tr>
 		<tr class="text-c">
 			<th width="25"><input type="checkbox" name="" value=""></th>
 			<th width="40">ID</th>
-			<th width="150">导航标题</th>
-			<th width="">导航名</th>
-			<th>导航描述</th>
+			<th width="">友链名</th>
 			<th>链接</th>
 			<th>排序</th>
 			<th>是否删除</th>
@@ -23,16 +21,14 @@
 		<tr v-for="sonLists in memberLists.info" class="text-c">
 			<td><input type="checkbox" value="2" name=""></td>
 			<td>@{{ sonLists.id }}</td>
-			<td>@{{ sonLists.title }}</td>
 			<td>@{{ sonLists.name }}</td>
-			<td>@{{ sonLists.description }}</td>
-			<td>@{{ sonLists.url }}</td>
+			<td>@{{ sonLists.link }}</td>
 			<td>@{{ sonLists.sort }}</td>
-			<td>@{{ sonLists.is_delete==1 ?'显示':'不显示' }}</td>
+			<td>@{{ sonLists.is_delete==1 ?'否':'是' }}</td>
 			<td class="td-manage">
-				<a v-if="sonLists['is_delete'] == 1" style="text-decoration:none" @click="productStart(sonLists.id,sonLists['is_delete'])" href="javascript:;" title="不显示"><i class="Hui-iconfont">&#xe706;</i>
+				<a v-if="sonLists['is_delete'] == 1" style="text-decoration:none" @click="productStart(sonLists.id,sonLists['is_delete'])" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe706;</i>
 				</a>
-				<a v-if="sonLists.is_delete == 2" style="text-decoration:none" @click="productStart(sonLists.id,sonLists.is_delete)" href="javascript:;" title="显示"><i  class="Hui-iconfont">&#xe615;</i>
+				<a v-if="sonLists.is_delete == 2" style="text-decoration:none" @click="productStart(sonLists.id,sonLists.is_delete)" href="javascript:;" title="正常"><i  class="Hui-iconfont">&#xe615;</i>
 				</a>
 				<a title="编辑" href="javascript:;" @click="productEdit(sonLists)" data-toggle="modal" data-target="#myModal" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> </td>
 
@@ -52,14 +48,7 @@
 				<div class="modal-body">
 					<article class="page-container" id='member-add'>
 						<div class="row cl">
-							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>导航标题：</label>
-							<div class="formControls col-xs-8 col-sm-9">
-								<input type="text" class="input-text" :value="editLists.title" placeholder="" id="title" name="title">
-							</div>
-						</div>
-						<br>
-						<div class="row cl">
-							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>导航名：</label>
+							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>名称：</label>
 							<div class="formControls col-xs-8 col-sm-9">
 								<input type="text" class="input-text" :value="editLists.name" placeholder="" id="name" name="name">
 							</div>
@@ -73,16 +62,9 @@
 						</div>
 						<br>
 						<div class="row cl">
-							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>导航描述：</label>
-							<div class="formControls col-xs-8 col-sm-9">
-								<input type="text" class="input-text" :value="editLists.description" placeholder="" id="description" name="description">
-							</div>
-						</div>
-						<br>
-						<div class="row cl">
 							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>链接：</label>
 							<div class="formControls col-xs-8 col-sm-9">
-								<input type="text" class="input-text" :value="editLists.url" placeholder="" id="url" name="url">
+								<input type="text" class="input-text" :value="editLists.link" placeholder="" id="link" name="link">
 							</div>
 						</div>
 						<br>
@@ -108,16 +90,9 @@
 				<div class="modal-body">
 					<article class="page-container" id='member-add'>
 						<div class="row cl">
-							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>导航标题：</label>
+							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>友链名：</label>
 							<div class="formControls col-xs-8 col-sm-9">
-								<input type="text" class="input-text" placeholder="请填写标题" id="name" name="add_title">
-							</div>
-						</div>
-						<br>
-						<div class="row cl">
-							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>导航名：</label>
-							<div class="formControls col-xs-8 col-sm-9">
-								<input type="text" class="input-text" value="" placeholder="请填写导航名" name="add_name">
+								<input type="text" class="input-text" value="" placeholder="请填写友链名" name="add_name">
 							</div>
 						</div>
 						<br>
@@ -129,16 +104,9 @@
 						</div>
 						<br>
 						<div class="row cl">
-							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>描述：</label>
-							<div class="formControls col-xs-8 col-sm-9">
-								<input type="text" class="input-text" placeholder="请填写描述" name="add_desc">
-							</div>
-						</div>
-						<br>
-						<div class="row cl">
 							<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>链接：</label>
 							<div class="formControls col-xs-8 col-sm-9">
-								<input type="text" class="input-text" placeholder="请填写链接" name="add_url">
+								<input type="text" class="input-text" placeholder="请填写链接" name="add_link">
 							</div>
 						</div>
 						<br>
@@ -176,9 +144,9 @@
                     },
                     methods:{
                         productStart:function (id,status) {
-                            var msg = '您确定不显示吗？';
+                            var msg = '您确定删除吗？';
                             if(status==2){
-                                msg = '您确定要显示吗？';
+                                msg = '您确定不删除吗？';
                             }
                             var index = layer.confirm(msg, {icon: 3, title:'提示'}, function(){
                                 model.modifyAccess(id,status)
@@ -191,13 +159,11 @@
                         submitAdd:function(){
                             var name=$.trim($("input[name=add_name]").val())
                             var sort=$.trim($("input[name=add_sort]").val())
-                            var description=$.trim($("input[name=add_desc]").val())
-                            var title=$.trim($("input[name=add_title]").val())
-                            var url=$.trim($("input[name=add_url]").val())
-                            if(name==''||description==''||title==''||url=='') {
+                            var link=$.trim($("input[name=add_link]").val())
+                            if(name==''||link=='') {
                                 layer.msg('请先填写必填项',{icon:2});return;
                             }
-                            model.doSubmitAdd(name,sort,url,description,title)
+                            model.doSubmitAdd(name,sort,link)
                         },
                         productEdit:function(id){
                             this.editLists=id
@@ -206,16 +172,14 @@
                             var id=this.editLists.id
                             var name=$.trim($("input[name=name]").val())
                             var sort=$.trim($("input[name=sort]").val())
-                            var description=$.trim($("input[name=description]").val())
-                            var title=$.trim($("input[name=title]").val())
-                            var url=$.trim($("input[name=url]").val())
-                            if(name==''||description==''||title==''||url=='') {
+                            var link=$.trim($("input[name=link]").val())
+                            if(name==''||link=='') {
                                 layer.msg('请先填写必填项',{icon:2});return;
                             }
-                            if(description==this.editLists.desc && name== this.editLists.name&& sort==this.editLists.sort&& title==this.editLists.title&& url==this.editLists.url){
+                            if(name== this.editLists.name&& sort==this.editLists.sort&& link==this.editLists.link){
                                 layer.msg('您没有做任何修改',{icon:5});return;
                             }
-                            model.doSubmitEdit(id,name,sort,description,title,url)
+                            model.doSubmitEdit(id,name,sort,link)
                         }
                     },
                     created:function () {
@@ -224,7 +188,7 @@
                 })
             },
             query:function () {
-                $.get('{{ asset("/back/system/navList") }}',{},function(msg){
+                $.get('{{ asset("/back/system/linkList") }}',{},function(msg){
                     console.log(msg);
                     model.memberList.memberLists = msg
 				})
@@ -235,7 +199,7 @@
                     type = 1
                 }
                 $.ajax({
-                    url:'{{ asset("/back/system/modifyNav") }}',
+                    url:'{{ asset("/back/system/modifyLink") }}',
                     type:'post',
                     dataType:'json',
                     data:{id:id,is_delete:type,_token:"{{csrf_token()}}"},
@@ -251,12 +215,12 @@
                     }
                 })
             },
-            doSubmitAdd:function(name,sort,url,description,title){
+            doSubmitAdd:function(name,sort,link){
                 $.ajax({
-                    url:'{{ asset("/back/system/addNav") }}',
+                    url:'{{ asset("/back/system/addLink") }}',
                     type:'post',
                     dataType:'json',
-                    data:{name:name,sort:sort,description:description,url:url,title:title,_token:"{{csrf_token()}}"},
+                    data:{name:name,sort:sort,link:link,_token:"{{csrf_token()}}"},
                     success:function (msg) {
                         console.log(msg)
                         if(msg.code==1){
@@ -271,12 +235,12 @@
                     }
                 })
             },
-            doSubmitEdit:function(id,name,sort,description,title,url){
+            doSubmitEdit:function(id,name,sort,link){
                 $.ajax({
-                    url:'{{ asset("/back/system/modifyNav") }}',
+                    url:'{{ asset("/back/system/modifyLink") }}',
                     type:'post',
                     dataType:'json',
-                    data:{id:id,name:name,sort:sort,title:title,url:url,description:description,_token:"{{ csrf_token() }}"},
+                    data:{id:id,name:name,sort:sort,link:link,_token:"{{ csrf_token() }}"},
                     success:function (msg) {
                         if(msg.code==1){
                             layer.msg(msg.msg,{icon:6})

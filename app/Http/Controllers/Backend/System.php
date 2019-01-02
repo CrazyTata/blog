@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Models\Backend\Config;
 use App\Http\Models\Backend\Nav;
+use App\Http\Models\Backend\Friend;
 use Illuminate\Support\Facades\Validator;
 /**
  * @note System management
@@ -32,6 +33,14 @@ class System extends Base
 		'url.required'=>'链接必须填写',
 		'title.required'=>'标题必须填写'
 	];
+    protected $validateLink=[
+        'name'=>'required',
+        'link'=>'required'
+    ];
+    protected $messageLink=[
+        'name.required'=>'导航名必须填写',
+        'link.required'=>'链接必须填写'
+    ];
     public function index()
     {
         return view('backend.system.index');
@@ -80,6 +89,32 @@ class System extends Base
         if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
         if($id = Nav::where('name',$request->name)->value('id')) return ['code'=>0,'msg'=>'此导航在系统中已经存在'];
         if(Nav::insertGetId($request->except(['_token']))) return ['code'=>1,'msg'=>'添加成功'];
+        return ['code'=>0,'msg'=>'网络错误，请稍后重试'];
+    }
+
+    public function linkList(){
+    	$info = [];
+    	if($count=Friend::count()) $info = Friend::orderBy('sort','desc')->get();
+    	return compact('count','info');
+    }
+
+    public function modifyLink(Request $request){
+    	if ($request->has('is_delete'))  {
+    		if(false!==Friend::where('id',$request->id)->update($request->except(['_token','id']))) return ['code'=>1,'msg'=>'修改成功'];
+			else return ['code'=>0,'msg'=>'修改失败'];
+		}
+    	$valadate = Validator::make($input=$request->except(['_token']),$this->validateLink,$this->messageLink);
+        if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
+        if(false!==Friend::where('id',$request->id)->update($request->except(['_token','id']))) return ['code'=>1,'msg'=>'修改成功'];
+        return ['code'=>0,'msg'=>'修改失败'];
+    }
+
+    //add nav
+    public function addlink(Request $request){
+    	$valadate = Validator::make($input=$request->except(['_token']),$this->validateLink,$this->messageLink);
+        if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
+        if($id = Friend::where('name',$request->name)->value('id')) return ['code'=>0,'msg'=>'此链接在系统中已经存在'];
+        if(Friend::insertGetId($request->except(['_token']))) return ['code'=>1,'msg'=>'添加成功'];
         return ['code'=>0,'msg'=>'网络错误，请稍后重试'];
     }
 }
