@@ -14,7 +14,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer(
-            ['home.header'],
+            '*',
             'App\Http\ViewComposers\BaseInfoComposer'
         );
     }

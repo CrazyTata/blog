@@ -20,7 +20,7 @@ class BaseInfoComposer
         $view->with([
             'nav'=>Nav::where('is_delete',1)->orderBy('sort','desc')->get(),
             'base'=>json_decode(Config::where('name','基本配置')->value('configs'),true),
-            'links'=>Nav::where('is_delete',1)->orderBy('sort','desc')->get()
+            'links'=>Friend::where('is_delete',1)->orderBy('sort','desc')->get()
             ]);
     }
 }

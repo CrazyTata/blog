@@ -1,207 +1,71 @@
 @include('home.header',['title'=>'首页'])
-<!-- <div class="picshow">
-  <ul>
-    <li><a href="/"><i><img src="home/images/b01.jpg"></i>
-        <div class="font">
-          <h3>个人博客模板《早安》</h3>
-        </div>
-      </a></li>
-    <li><a href="/"><i><img src="home/images/b02.jpg"></i>
-        <div class="font">
-          <h3>个人博客模板《早安》</h3>
-        </div>
-      </a></li>
-    <li><a href="/"><i><img src="home/images/b03.jpg"></i>
-        <div class="font">
-          <h3>个人博客模板《早安》</h3>
-        </div>
-      </a></li>
-    <li><a href="/"><i><img src="home/images/b04.jpg"></i>
-        <div class="font">
-          <h3>个人博客模板《早安》</h3>
-        </div>
-      </a></li>
-    <li><a href="/"><i><img src="home/images/b05.jpg"></i>
-        <div class="font">
-          <h3>个人博客模板《早安》</h3>
-        </div>
-      </a></li>
-  </ul>
-</div> -->
-<div class="picshow">
-  <div>
-    <a href="/"><i><img width="100%" height="476px" src="home/images/timg3.jpg"></i></a>
-  </div>
-</div>
 <article>
-  <div class="blogs">
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text02.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">陌上花开，可缓缓归矣</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
+  <div class="banner">
+    <div id="sucaihuo" class="fader"> <img class="slide" src="home/images/banner01.jpg"> <img class="slide" src="home/images/banner02.jpg"> <img class="slide" src="home/images/banner03.jpg">
+      <div class="fader_controls">
+        <div class="page prev" data-target="prev">&lsaquo;</div>
+        <div class="page next" data-target="next">&rsaquo;</div>
+        <ul class="pager_list">
+        </ul>
       </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/zd03.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/zd01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/zd02.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/zd01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
-    <li> <span class="blogpic"><a href="/"><img src="home/images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
-      <div class="bloginfo">
-        <p>用最简单的代码，实现瀑布流布局，没有繁琐的css，没有jq，只需要做到以下就可以实现瀑布流的效果。思路很简单，看成是三列布局，分别用三个ul来调用。帝国cms列表模板，...</p>
-      </div>
-      <div class="autor"><span class="lm"><a href="/" title="CSS3|Html5" target="_blank" class="classname">CSS3|Html5</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="/">阅读原文</a></span></div>
-    </li>
+    </div>
+    <script>
+        $(function() {
+            $('#sucaihuo').easyFader();
+        });
+    </script>
   </div>
-  <div class="sidebar">
-    <div class="about">
-      <div class="avatar"> <img src="home/images/avatar.jpg" alt=""> </div>
-      <p class="abname">{{ $boss['nickname'] }} | {{ $boss['name'] }}</p>
-      <p class="abposition">{{ $boss['job'] }}</p>
-      <div class="abtext"> {{ $boss['description'] }} </div>
-    </div>
-    <div class="search">
-      <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
-        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
-        <input name="show" value="title" type="hidden">
-        <input name="tempid" value="1" type="hidden">
-        <input name="tbname" value="news" type="hidden">
-        <input name="Submit" class="input_submit" value="搜索" type="submit">
-      </form>
-    </div>
-    <div class="cloud">
-      <h2 class="hometitle">标签云</h2>
-      <ul>
-        <a href="/">陌上花开</a> <a href="/">校园生活</a> <a href="/">html5</a> <a href="/">SumSung</a> <a href="/">青春</a> <a href="/">温暖</a> <a href="/">阳光</a> <a href="/">三星</a><a href="/">索尼</a> <a href="/">华维荣耀</a> <a href="/">三星</a> <a href="/">索尼</a>
-      </ul>
-    </div>
+
+  <div class="newblogs">
+    <h2 class="hometitle">最新文章</h2>
+    <ul>
+        @foreach($article['info'] as $k=>$v)
+        <li>
+            <h3 class="blogtitle"><span><a href="{{ url($cate_url.'/'.$v->id) }}" title="css3" target="_blank"  class="classname">{{ $v->cate_name }}</a></span><a href="/jstt/css3/2018-03-26/812.html" target="_blank" >{{ $v->title }}</a></h3>
+            <div class="bloginfo"><span class="blogpic"><a href="{{ url($cate_url.'/'.$v->id) }}" title="{{ $v->title }}"><img src="home/images/t01.jpg" alt="{{ $v->title }}" /></a></span>
+              <p><div style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:450px;height: 180px;">{!! $v->content !!}</div></p>
+            </div>
+            <div class="autor"><span class="lm f_l"></span><span class="dtime f_l">{{ $v->create_at }}</span><span class="viewnum f_l">浏览（<a href="{{ url($cate_url.'/'.$v->id) }}">{{ $v->number }}</a>）</span><span class="f_r"><a href="/jstt/css3/2018-03-26/812.html" class="more">阅读原文>></a></span></div>
+            <div class="line"></div>
+        </li>
+        @endforeach
+            <li> <span class="blogpic"><a href="{{ url($cate_url.'/'.$v->id) }}"><img src="home/images/text02.jpg"></a></span>
+                <h2 class="blogtitle"><a href="{{ url($cate_url.'/'.$v->id) }} ">{{ $v->title }}</a></h2>
+                <div class="bloginfo">
+                    <p><div style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:450px;height: 180px;">{!! $v->content !!}</div></p>
+                </div>
+                <div class="autor"><span class="lm"><a href="{{ url($cate_url.'/'.$v->id) }}" title="{{ $v->title }}" target="_blank" class="classname">{{ $v->cate_name }}</a></span><span class="dtime">{{ $v->create_at }}</span><span class="viewnum">浏览（<a href="{{ url($cate_url.'/'.$v->id) }}">{{ $v->create_at }}</a>）</span><span class="readmore"><a href="{{ url($cate_url.'/'.$v->id) }}">阅读全文</a></span></div>
+            </li>
+
+    </ul>
+  </div>
+  <div class="rbox">
     <div class="paihang">
-      <h2 class="hometitle">点击排行</h2>
+      <h2 class="hometitle">人气排行</h2>
       <ul>
-        <li><b><a href="/download/div/2015-04-10/746.html" target="_blank">【活动作品】柠檬绿兔小白个人博客模板30...</a></b>
-          <p><i><img src="home/images/t02.jpg"></i>展示的是首页html，博客页面布局格式简单，没有复杂的背景，色彩局部点缀，动态的幻灯片展示，切换卡，标...</p>
-        </li>
-        <li><b><a href="/download/div/2014-02-19/649.html" target="_blank"> 个人博客模板（2014草根寻梦）30...</a></b>
-          <p><i><img src="home/images/b03.jpg"></i>2014第一版《草根寻梦》个人博客模板简单、优雅、稳重、大气、低调。专为年轻有志向却又低调的草根站长设...</p>
-        </li>
-        <li><b><a href="/download/div/2013-08-08/571.html" target="_blank">黑色质感时间轴html5个人博客模板30...</a></b>
-          <p><i><img src="home/images/b04.jpg"></i>黑色时间轴html5个人博客模板颜色以黑色为主色，添加了彩色作为网页的一个亮点，导航高亮显示、banner图片...</p>
-        </li>
-        <li><b><a href="/download/div/2014-09-18/730.html" target="_blank">情侣博客模板系列之《回忆》Html30...</a></b>
-          <p><i><img src="home/images/b05.jpg"></i>Html5+css3情侣博客模板，主题《回忆》，使用css3技术实现网站动画效果，主题《回忆》,分为四个主要部分，...</p>
-        </li>
-        <li><b><a href="/download/div/2014-04-17/661.html" target="_blank">黑色Html5个人博客模板主题《如影随形》30...</a></b>
-          <p><i><img src="home/images/b06.jpg"></i>014第二版黑色Html5个人博客模板主题《如影随形》，如精灵般的影子会给人一种神秘的感觉。一张剪影图黑白...</p>
-        </li>
-        <li><b><a href="/jstt/bj/2015-01-09/740.html" target="_blank">【匆匆那些年】总结个人博客经历的这四年…30...</a></b>
-          <p><i><img src="home/images/mb02.jpg"></i>博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也...</p>
-        </li>
+          @foreach($hit['info'] as $k=>$v)
+              <li><b><a href="{{ url($cate_url.'/'.$v->id) }}" target="_blank"><span style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:200px;">{{ $v->title }}</span></a></b>
+                  <p><div style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:300px;height: 100px;">{!! $v->content !!}  </div>...</p>
+              </li>
+          @endforeach
       </ul>
     </div>
     <div class="paihang">
       <h2 class="hometitle">站长推荐</h2>
       <ul>
-        <li><b><a href="/download/div/2015-04-10/746.html" target="_blank">【活动作品】柠檬绿兔小白个人博客模板30...</a></b>
-          <p><i><img src="home/images/t02.jpg"></i>展示的是首页html，博客页面布局格式简单，没有复杂的背景，色彩局部点缀，动态的幻灯片展示，切换卡，标...</p>
-        </li>
-        <li><b><a href="/download/div/2014-02-19/649.html" target="_blank"> 个人博客模板（2014草根寻梦）30...</a></b>
-          <p><i><img src="home/images/b03.jpg"></i>2014第一版《草根寻梦》个人博客模板简单、优雅、稳重、大气、低调。专为年轻有志向却又低调的草根站长设...</p>
-        </li>
-        <li><b><a href="/download/div/2013-08-08/571.html" target="_blank">黑色质感时间轴html5个人博客模板30...</a></b>
-          <p><i><img src="home/images/b04.jpg"></i>黑色时间轴html5个人博客模板颜色以黑色为主色，添加了彩色作为网页的一个亮点，导航高亮显示、banner图片...</p>
-        </li>
-        <li><b><a href="/download/div/2014-09-18/730.html" target="_blank">情侣博客模板系列之《回忆》Html30...</a></b>
-          <p><i><img src="home/images/b05.jpg"></i>Html5+css3情侣博客模板，主题《回忆》，使用css3技术实现网站动画效果，主题《回忆》,分为四个主要部分，...</p>
-        </li>
-        <li><b><a href="/download/div/2014-04-17/661.html" target="_blank">黑色Html5个人博客模板主题《如影随形》30...</a></b>
-          <p><i><img src="home/images/b06.jpg"></i>014第二版黑色Html5个人博客模板主题《如影随形》，如精灵般的影子会给人一种神秘的感觉。一张剪影图黑白...</p>
-        </li>
-        <li><b><a href="/jstt/bj/2015-01-09/740.html" target="_blank">【匆匆那些年】总结个人博客经历的这四年…30...</a></b>
-          <p><i><img src="home/images/mb02.jpg"></i>博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也...</p>
-        </li>
+          @foreach($hot['info'] as $k=>$v)
+              <li><b><a href="{{ url($cate_url.'/'.$v->id) }}" target="_blank"><span style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:200px;">{{ $v->title }}</span></a></b>
+                  <p><div style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:300px;height: 100px;">{!! $v->content !!}  </div>...</p>
+              </li>
+          @endforeach
       </ul>
     </div>
     <div class="links">
       <h2 class="hometitle">友情链接</h2>
       <ul>
-
-        @foreach($nav as $k=>$v)
-        <li><a href="{{ url($v->link) }}" title="{{ $v->name }}">{{ $v->name }}</a></li>
-        @endforeach
+          @foreach($links as $k=>$v)
+              <li><a href="{{ url($v['link']) }}" title="{{ $v['name'] }}">{{ $v['name'] }}</a></li>
+          @endforeach
       </ul>
     </div>
     <div class="weixin">
