@@ -80,6 +80,8 @@ Route::group(['namespace'=>'Home','middleware'=>['web']],function (){
     Route::get('/','Index@index')->name('index');//首页
     Route::get('/blog','Index@blog')->name('blog');//文章
     Route::get('/about','Index@about')->name('about');//关于我
-    Route::get('/message','Index@message')->name('message');//留言
-    Route::get('/cate/{id}','Category@cate')->name('message');//留言
+    Route::get('/message/{id?}','Index@message')->name('message');//留言
+    Route::get('/c/{id}','Category@cate')->name('cate');//留言
+    Route::get('/p/{id}','Index@product');//留言
+    Route::post('/message','Index@addMessage');
 });

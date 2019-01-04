@@ -1,46 +1,40 @@
-@include('home.header',['title'=>'ÎÄÕÂÏêÇéÒ³'])
-<article>
+@include('home.header',['title'=>'æ–‡ç« è¯¦æƒ…é¡µ'])
+<link href="{{ asset('home/css/info.css') }}" rel="stylesheet">
 
-  <div class="infos">
-    <div class="newsview">
-      <h2 class="intitle">ÄúÏÖÔÚµÄÎ»ÖÃÊÇ£º<a href="/">ÍøÕ¾Ê×Ò³</a>&nbsp;&gt;&nbsp;<a href="/">Ñ§ÎÞÖ¹¾³</a></h2>
-      <h3 class="news_title">×÷ÎªÒ»¸öÉè¼ÆÊ¦,Èç¹ûÔâµ½ÖÊÒÉÄãÊÇ·ñÄÜã¡ÊØ×Ô¼ºµÄÔ­Ôò?</h3>
-      <div class="news_author"><span class="au01">ÑîÇà</span><span class="au02">2018-03-18</span><span class="au03">¹²<b>309</b>ÈËÎ§¹Û</span></div>
-      <div class="tags"><a href="/">ÖÐÐË</a> <a href="/" target="_blank">ßÇßÇ</a> <a href="/" target="_blank">MWC</a> <a href="/" target="_blank">Ð¡ÒÏ</a> <a href="/" target="_blank">ÔË¶¯Ïà»ú</a></div>
-      <div class="news_about"><strong>¼ò½é</strong>Ôø¾­ÓÐÕ¾³¤ÕÒÎÒÇóÖú£¬ËûËµËû²»ÖªµÀ¸ÃÔõÃ´°ì£¬×Ô¼º×ö³öÀ´µÄÍøÕ¾£¬²»½öÃ»ÓÐµÃµ½´ó¼ÒµÄÈÏ¿É£¬·´¶øÈÃ´ó¼Ò¸øËû¿ªÁËÒ»¸öÆÀÅÐ´ó»á¡£Ëû×Ô¼ºÈÏÎªÒÑ¾­ÊÇ×öµÄ×îºÃµÄ£¬È´ÔâÊÜ´ó¼ÒÎÞÇéµÄÖ¸ÔðÊÇ¡°À¬»ø¡±×÷Æ·¡£</div>
-      <div class="news_infos">
-        <p>Ôø¾­ÓÐÕ¾³¤ÕÒÎÒÇóÖú£¬ËûËµËû²»ÖªµÀ¸ÃÔõÃ´°ì£¬×Ô¼º×ö³öÀ´µÄÍøÕ¾£¬²»½öÃ»ÓÐµÃµ½´ó¼ÒµÄÈÏ¿É£¬·´¶øÈÃ´ó¼Ò¸øËû¿ªÁËÒ»¸öÆÀÅÐ´ó»á¡£Ëû×Ô¼ºÈÏÎªÒÑ¾­ÊÇ×öµÄ×îºÃµÄ£¬È´ÔâÊÜ´ó¼ÒÎÞÇéµÄÖ¸ÔðÊÇ¡°À¬»ø¡±×÷Æ·¡£</p>
-        <p> ÓÐµÄ¸øËûÌá³öÁËÒâ¼û£¬ÓÐµÄÃ»ÓÐÌáÒâ¼û£¬Ö±½ÓÈÓÁËÁ½¸ö×Ö£¬¡°À¬»ø¡±¡£ÕâÃ»ÓÐË­¶ÔË­´í£¬Ã¿¸öÈËµÄÉóÃÀ¹Ûµã¶¼²»Ò»Ñù£¬ÎÒÃÇÄÜ×öµÄ¾ÍÊÇ×ðÖØ±ðÈË¡£ÎÒÏàÐÅËûÊÇÈÏÕæ¶Ô´ýÍøÕ¾µÄ£¬ÎÒ×ÐÏ¸¿´ÁËËûµÄÉè¼Æ£¬²¼¾Ö£¬ÑÕÉ«´îÅä¶¼ÊÇËû¾«ÐÄµÄÉè¼Æ¡£ÃÀºÍ³óÊÇÃ»ÓÐÒ»¸öÆÀÅÐ±ê×¼µÄ¡£ÎÒ¸øËû½²ÁËÒ»¸ö¹ØÓÚ½¨ÖþÉè¼ÆÊ¦µÄ¹ÊÊÂ¡£ </p>
-        <p> 300¶àÄêÇ°£¬½¨ÖþÉè¼ÆÊ¦¿ËÀïË¹ÍÐ¡¤À³ÒÁ¶÷ÊÜÃüÉè¼ÆÁËÓ¢¹úÎÂÔóÊÐÕþ¸®´óÌü£¬ËûÔËÓÃ¹¤³ÌÁ¦Ñ§µÄÖªÊ¶£¬ÒÀ¾Ý×Ô¼º¶àÄêµÄÊµ¼ù¾­Ñé£¬ÇÉÃîµØÉè¼ÆÁËÖ»ÓÃÒ»¸ùÖù×ÓÖ§³ÅµÄ´óÌüÌì»¨°å¡£µ«ÊÇÒ»ÄêÒÔºó£¬ÔÚ½øÐÐ¹¤³ÌÑéÊÕÊ±£¬ÊÐÕþ¸®È¨ÍþÈËÊ¿È´¶Ô´ËÌá³öÁËÖÊÒÉ£¬²¢ÒªÇóÀ³ÒÁ¶÷Ò»¶¨ÒªÔÙ¶à¼Ó¼¸¸ùÖù×Ó¡£À³ÒÁ¶÷¶Ô×Ô¼ºµÄÉè¼ÆºÜ×ÔÐÅ£¬Òò´ËËû·Ç³£¿àÄÕ£º¼á³Ö×Ô¼ºµÄÖ÷ÕÅ°É£¬ËûÃÇ¿Ï¶¨»áÁíÕÒÈËÐÞ¸ÄÉè¼Æ£»²»¼á³Ö°É£¬ÓÖÓÐã£×Ô¼ºÎªÈËµÄ×¼Ôò¡£ </p>
-        <p><img src="images/v1.jpg"></p>
-        <p>Ã¬¶ÜÁËºÜ³¤Ê±¼ä£¬À³ÒÁ¶÷ÖÕÓÚÏëµ½ÁËÒ»ÌõÃî¼Æ£¬ËûÔÚ´óÌüÀï¼ÓÁËËÄ¸ùÖù×Ó£¬µ«ËüÃÇ²¢Î´ÓëÌì»¨°åÁ¬½Ó£¬Ö»²»¹ýÊÇ×°×°Ñù×Ó£¬ºýÅªÄÇÐ©¸Õã¹×ÔÓÃµÄ¼Ò»ï¡£Õâ¸öÃØÃÜÊ¼ÖÕÃ»ÓÐ±»·¢ÏÖ¡£Ö±µ½300¶àÄêºóÊÐÕþ¸®×¼±¸ÐÞÉÉ´óÌüÌì»¨°åÊ±£¬²Å·¢ÏÖÀ³ÒÁ¶÷µÄ¡°ÅªÐé×÷¼Ù¡±¡£ÎÒÃÇÃ¿¸öÈË¶¼ÏëµÃµ½±ðÈËµÄ×ð¾´£¬ÓÈÆäÓÐÁËÒ»¶¨µÄÉç»áµØÎ»µÄÈË£¬¸üÏëµÃµ½±ðÈË×ðÖØ¡£½¨ÖþÉè¼ÆÊ¦¿ËÀïË¹ÍÐ¡¤À³ÒÁ¶÷ºÜÃ÷°×ÕâÒ»µã£¬µ±ÊÐÕþ¸®È¨ÍþÈËÊ¿¶ÔËûµÄ½¨ÖþÉè¼ÆÌá³öÒÉÎÊÊ±£¬Ëû²¢²»¼á³Ö¼º¼û£¬¶øÊÇÈÃÊÐÕþ¸®È¨ÍþÈËÊ¿¸Ðµ½Ëû¶ÔËûÃÇºÜ×ðÖØ¡£ËùÒÔ£¬Ò»¸ö´ÏÃ÷µÄÈË£¬²»½öÄÜÎ¬»¤×Ô¼ºµÄ×ðÑÏ£¬»¹ÄÜ¹»¹Ë¼°ËûÈËµÄ×ðÑÏ¡£</p>
-        <p><img src="images/v2.jpg"></p>
-        <p>À³ÒÁ¶÷µÄ¹ÊÊÂ£¬ÏòÎÒÃÇ½²ÊöÁËÒ»¸öÉî¿ÌµÄÕÜÀí¡°ã¡ÊØ×Å×Ô¼ºµÄÔ­Ôò£¬ÄÄÅÂÔâÓöµ½×î´óµÄ×èÁ¦£¬Ò²ÒªÏë°ì·¨µÖ´ïÊ¤Àû¡£¡±</p>
-        <p>¾ÍÄÃÎÒ×Ô¼ºÀ´Ëµ°É£¬ÓÐÊ±ºò»áºÜÃ¬¶Ü£¬Éè¼ÆºÃµÄ×÷Æ·£¬²»°ÑËü·ÖÏí³öÀ´£¬»á¾õµÃ´ýÔÚ×Ô¼ºµçÄÔÀïÃæÊµÔÚÊÇÃ»ÓÐÒâÒå¡£¸É´à¾Í·¢²¼³öÈ¥°É¡£ÎÒÒ²º¦ÅÂÊÕµ½´ó¼Ò²»ºÃµÄÆÀÂÛ£¬ÓÐÐ©ÆÀÂÛ£¬¿ÉÄÜËµÕßÎÞÒâ£¬µ«ÊÇ¶ÔÓÚÃ¿Ò»¸öÓÃÐÄµÄÕ¾³¤À´Ëµ£¬¶¼»áÊÜºÜÉîµÄÓ°Ïì£¬·ßÅ­£¬ÄÕÐß¡£</p>
-        <p>ÐÄÌ¬ºÜÖØÒª£¬ÔÙÀ´¿´À³ÒÁ¶÷£¬Ëûµ±Ê±¶¥×Å¶à´óµÄÑ¹Á¦Ñ½¡£Í¬Ñù×÷ÎªÒ»¸öÇ°¶ËÉè¼ÆÊ¦£¬ÄÄÅÂÔâµ½ÖÊÒÉ£¬ÎÒÃÇÒ²ÒªÏñÀ³ÒÁ¶÷Ò»Ñùã¡ÊØ×Ô¼ºµÄÔ­Ôò¡£</p>
-      </div>
+<article>
+    <div class="infos">
+        <div class="newsview">
+            <h2 class="intitle">æ‚¨çŽ°åœ¨çš„ä½ç½®æ˜¯ï¼š<a href="{{ url('/') }}">ç½‘ç«™é¦–é¡µ</a>&nbsp;&gt;&nbsp;<a href="/">{{ $data->cate_name }}</a></h2>
+            <h3 class="news_title">{{ $data->title }}</h3>
+            <div class="news_author"><span class="au01">{{ $data->name }}</span><span class="au02">{{ $data->create_at }}</span><span class="au03">å…±<b>{{ $data->number }}</b>äººå›´è§‚</span></div>
+            <div class="tags">@foreach( explode(',',$data->key_words) as $v)<a href="#">{{ $v }}</a> @endforeach</div>
+            <div class="news_infos">
+               {!! $data->content !!}
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="nextinfo">
-    <p>ÉÏÒ»Æª£º<a href="/" >´«Î¢Èí½«°ÑÈëÃÅ¼¶SurfaceÆ½°å¼Û¸ñÏÂµ÷150ÃÀÔª</a></p>
-    <p>ÏÂÒ»Æª£º<a href="/">ÔÆÄÏÖ®ÐÐ¡ª¡ª´óÀí¶ýº£Ò»ÈÕÓÎ</a></p>
-  </div>
-  <div class="otherlink">
-    <h2>Ïà¹ØÎÄÕÂ</h2>
-    <ul>
-      <li><a href="/" title="ÔÆÄÏÖ®ÐÐ¡ª¡ªÀö½­¹ÅÕòÓñÁúÑ©É½">ÔÆÄÏÖ®ÐÐ¡ª¡ªÀö½­¹ÅÕòÓñÁúÑ©É½</a></li>
-      <li><a href="/" title="ÔÆÄÏÖ®ÐÐ¡ª¡ª´óÀí¶ýº£Ò»ÈÕÓÎ">ÔÆÄÏÖ®ÐÐ¡ª¡ª´óÀí¶ýº£Ò»ÈÕÓÎ</a></li>
-      <li><a href="/" target="_blank">×¡ÔÚÊÖ»úÀïµÄÅóÓÑ</a></li>
-      <li><a href="/" target="_blank">ºÀÑÅÊÖ»úÕýÊ½·¢²¼! ÔÚ·¨¹úÈ«ÊÖ¹¤´òÔìµÄÉÝ³ÞÆ·</a></li>
-      <li><a href="/" target="_blank">½ÌÄãÔõÑùÓÃÇ··ÑÊÖ»ú²¦´òµç»°</a></li>
-      <li><a href="/" target="_blank">Ô­À´ÒÔÎª£¬Ò»¸öÈËµÄÓÂ¸ÒÊÇ£¬É¾µôËûµÄÊÖ»úºÅÂë...</a></li>
-    </ul>
-  </div>
-  <div class="news_pl">
-    <h2>ÎÄÕÂÆÀÂÛ</h2>
-    <ul>
-    </ul>
-  </div>
+    <div class="nextinfo">
+        <p>ä¸Šä¸€ç¯‡ï¼š@if($pre)<a href="{{ url($product_url.'/'.$pre['id']) }}" >{{ $pre->title }}</a>@else å·²ç»æ˜¯ç¬¬ä¸€ç¯‡äº† @endif</p>
+        <p>ä¸‹ä¸€ç¯‡ï¼š@if($nex)<a href="{{ url($product_url.'/'.$nex['id']) }}" >{{ $nex->title }}</a>@else å·²ç»æ˜¯æœ€åŽä¸€ç¯‡äº† @endif</p>
+    </div>
+    <div class="otherlink">
+        <h2>ç›¸å…³æ–‡ç« </h2>
+        <ul>
+            @foreach($other_article as $k=>$v)
+            <li><a href="{{ url($product_url.'/'.$v->id) }}" target="_blank" title="{{ $v->title }}">{{ $v->title }}</a></li>
+            @endforeach
+        </ul>
+    </div>
+    <div class="news_pl">
+        <h2>æ–‡ç« è¯„è®º</h2>
+        <ul>
+            @foreach($comment as $k=>$v)
+                <li>&emsp;<b>ã€ æ¸¸å®¢ | {{ $v->create_at }}ã€‘ï¼š</b>{{ $v->content }}</li>
+            @endforeach
+        </ul>
+        <div class="tags"><a href="{{ url('/message/'.$data->id) }}">æˆ‘è¦è¯„è®º</a> </div>
+    </div>
+
 
 </article>
 @include('home.footer')

@@ -21,6 +21,7 @@ class Article extends Model
                     $query->where('category.title', 'like', "%$v%")
                         ->orWhere('category.', 'like', "%$v%");
                 };
+                if(in_array($k,['id','is_delete'])) $map[] = ['article.'.$k,$v];
                 if($k=='time1') $map[] = ['category.create_at','>',$v.' 00:00:00'];
                 if($k=='time2') $map[] = ['category.create_at','<',$v.' 23:59:59'];
             }

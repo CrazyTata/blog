@@ -6,15 +6,14 @@
     <meta name="keywords" content="{{ $base['website_keywords'] }}" />
     <meta name="description" content="{{ $base['website_description'] }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="home/css/base.css" rel="stylesheet">
-    <link href="home/css/index.css" rel="stylesheet">
-    <link href="home/css/m.css" rel="stylesheet">
+    <link href="{{ asset('home/css/base.css') }}" rel="stylesheet">
+    <link href="{{ asset('home/css/m.css') }}" rel="stylesheet">
 
-    <script src="home/js/jquery.min.js"></script>
-    <script src="home/js/jquery.easyfader.min.js"></script>
-
+    <script src="{{ asset('home/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('home/js/jquery.easyfader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/out/lib/layer/2.4/layer.js') }}"></script>
     <!--[if lt IE 9]>
-    <script src="home/js/modernizr.js"></script>
+    <script src="{{ asset('home/js/modernizr.js') }}"></script>
     <![endif]-->
     <script>
         window.onload = function ()

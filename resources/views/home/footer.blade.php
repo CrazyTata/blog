@@ -2,7 +2,7 @@
 <footer>
     <p>Design by <a href="/">tata个人博客</a> <a href="/"></a></p>
 </footer>
-<script src="home/js/nav.js"></script>
+<script src="{{ asset('home/js/nav.js') }}"></script>
 <script type="text/javascript">
 	    (function() {
     var coreSocialistValues = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善"]
