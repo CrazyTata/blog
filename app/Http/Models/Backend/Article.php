@@ -38,7 +38,7 @@ class Article extends Model
             ->join('category','article.cate_id','category.id')
             ->join('user','article.member_id','user.id')
             ->join('images','article.image_id','images.id')
-            ->select('article.*','user.name','category.name as cate_name','images.url as src')
+            ->select('article.*','user.name','category.name as cate_name','images.url as src','images.b_url','images.s_url')
             ->where($map)
             ->where($map1)
             ->offset(($limit[0]-1)*$limit[1])

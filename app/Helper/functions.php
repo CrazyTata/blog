@@ -14,12 +14,14 @@ function getIP(){
     return $cip;
 }
 
-function uploadFile($path,$file){
+function uploadFile($path,$file,$type=''){
     include_once (base_path().'\resources\org\Upload.php');
-    $upload = new Upload(1, $path);//='./upload/product'
-    $code=0;
-    if($upload->upload_file($file)) $code=1; //上传成功
-    return ['code'=>$code,'msg'=>$upload->get_msg($file)];
+    $upload = new Upload(1, $path);//='./upload/product';
+    if($upload->upload_file($file,$type)) {
+        if($type) return ['code'=>1,'msg'=>$upload->get_msgs()]; //上传成功
+        return ['code'=>1,'msg'=>$upload->get_msg()]; //上传成功
+    }
+    return ['code'=>0,'msg'=>$upload->get_msg()];
 }
 
  function getLastSql() {

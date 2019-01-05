@@ -10,6 +10,7 @@ use App\Http\Models\Backend\Article;
 use App\Http\Models\Backend\Images;
 use App\Http\Controllers\Backend\Base;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManagerStatic as Image;
 /**
  * @note Product management
  * @title Product-management
@@ -67,7 +68,7 @@ class Product extends Base
     }
 
     public function test(){
-        return Article::getList([],[1,10]);
+        return view('backend.product.test');
     }
 
     /**
@@ -120,6 +121,8 @@ class Product extends Base
         $input['update_at'] = date('Y-m-d H:i:s');
         $input['create_at'] = date('Y-m-d H:i:s');
         $image['url'] = $input['src'];
+        $image['b_url'] = $input['bigSrc'];
+        $image['s_url'] = $input['smallSrc'];
         $image['desc'] = '博客图片';
         $image['types'] = 1;
         unset($input['src']);
@@ -134,13 +137,17 @@ class Product extends Base
         
     }
 
-    public function uploadFile(){
+    public function uploadFile(Request $request){
+        $types = '';
+        if($request->has('type')) $types = $request->type;
         $file = $_FILES['file'];
-        $res = uploadFile('./upload/product/',$file);
+        $res = uploadFile('./upload/product/',$file,$types);
         if(isset($res['code'])) return $res;
         else return ['code'=>0,'msg'=>'网络错误，请稍后重试'];
     }
-
+    // public function uploadFile(Request $request){
+    //     return Image::make($request->file('file'))->resize(300, 200)->save('./upload/product/a.jpg');
+    // }
     //delete back/member/{member}
     public function destroy()
     {
@@ -168,15 +175,19 @@ class Product extends Base
      * @date: 2018/12/20 11:08
      */
     public function doEdit(Request $request){
-        $valadate = Validator::make($input=$request->only(['cate_id','content','id','image_id','key_words','sort','src','title']),$this->validate_field,$this->validate_msg);
+        $valadate = Validator::make($input=$request->only(['cate_id','content','id','image_id','key_words','sort','src','title','bigSrc','smallSrc']),$this->validate_field,$this->validate_msg);
         if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
          $input['member_id'] = session('user') ['id'];
         $input['update_at'] = date('Y-m-d H:i:s');
         $image['url'] = $input['src'];
+        $image['b_url'] = $input['bigSrc'];
+        $image['s_url'] = $input['smallSrc'];
         $image['desc'] = '博客图片';
         $image['types'] = 1;
         $image_id = $input['image_id'];
         unset($input['src']);
+        unset($input['bigSrc']);
+        unset($input['smallSrc']);
         $image_info = Images::getInfoById($image_id);
         DB::beginTransaction();
         try{

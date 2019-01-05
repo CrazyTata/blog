@@ -103,7 +103,8 @@
 						</div>
 					</div>
 					<br>
-
+					<input type="hidden" name="add_pic_big" value="">
+					<input type="hidden" name="add_pic_small" value="">
 					<div class="row cl">
 						<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
 						<div class="formControls col-xs-8 col-sm-9"> 
@@ -177,7 +178,8 @@
 						</div>
 					</div>
 					<br>
-
+					<input type="hidden" name="edit_pic_big" value="">
+					<input type="hidden" name="edit_pic_small" value="">
 					<div class="row cl">
 						<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
 						<div class="formControls col-xs-8 col-sm-9"> 
@@ -273,7 +275,7 @@
 						search:{name:'',telephone:'',time2:'',time1:''},
 						memberLists:{},
 						groupLists:{},
-						editLists:{title:'',content:'',src:'',sort:'',cate_id:'',key_words:''},
+						editLists:{title:'',content:'',src:'',sort:'',cate_id:'',key_words:'',bigSrc:'',smallSrc:''},
 						originEditLists:{},
 						cate_id:'',
 						categroyLists:{},
@@ -316,7 +318,8 @@
 							if(title==''||sort==''||words==''||cate_id==''||html==''||src==''||src=='/no-picture.png') {
 								layer.msg('请先填写必填项',{icon:2});return;
 							}
-							model.doSubmitAdd(title,sort,words,cate_id,html,src)
+							model.doSubmitAdd(title,sort,words,cate_id,html,src,$('input[name=add_pic_big]').val()
+							,$('input[name=add_pic_small]').val())
 						},
 						productEdit:function(id){
 							this.originEditLists=id
@@ -343,6 +346,8 @@
 							// }
 							this.editLists.content=html
 							this.editLists.src=src
+							this.editLists.bigSrc=$('input[name=edit_pic_big]').val()
+							this.editLists.smallSrc=$('input[name=edit_pic_small]').val()
 							// console.log(this.editLists);return;
 							model.doSubmitEdit(this.editLists)
 						}
@@ -387,12 +392,12 @@
                     }
 				})
             },
-            doSubmitAdd:function(title,sort,words,cate_id,html,src){
+            doSubmitAdd:function(title,sort,words,cate_id,html,src,big,small){
             	$.ajax({
 					url:'{{ asset("/back/product/add") }}',
 					type:'post',
 					dataType:'json',
-					data:{title:title,sort:sort,key_words:words,cate_id:cate_id,content:html,src:src,_token:"{{csrf_token()}}"},
+					data:{title:title,sort:sort,key_words:words,cate_id:cate_id,content:html,src:src,bigSrc:big,smallSrc:small,_token:"{{csrf_token()}}"},
 					success:function (msg) {
 						console.log(msg)
 						if(msg.code==1){
@@ -477,10 +482,12 @@ layui.use('upload', function(){
   var uploadInst = upload.render({
     elem: '#uploadFiles' //绑定元素
     ,url: '/back/product/upload' //上传接口
-    ,data: {'_token':"{{ csrf_token() }}"}
+    ,data: {'_token':"{{ csrf_token() }}",'type':1}
     ,done: function(res){
     	if(res.code==1){
-    		$('#uploadSrc').attr('src',res.msg)
+    		$('#uploadSrc').attr('src',res.msg.origin)
+    		$('input[name=add_pic_small]').val(res.msg.small)
+    		$('input[name=add_pic_big]').val(res.msg.big)
     		layer.msg('上传成功',{icon:6})
     	}else{
     		layer.msg(res.msg,{icon:5})
@@ -498,16 +505,19 @@ layui.use('upload', function(){
   var uploadInst1 = upload1.render({
     elem: '#uploadFiles_edit' //绑定元素
     ,url: '/back/product/upload' //上传接口
-    ,data: {'_token':"{{ csrf_token() }}"}
+    ,data: {'_token':"{{ csrf_token() }}",'type':1}
     ,done: function(res){
     	if(res.code==1){
-    		$('#uploadSrc_edit').attr('src',res.msg)
+    		$('#uploadSrc_edit').attr('src',res.msg.origin)
+    		$('input[name=edit_pic_small]').val(res.msg.small)
+    		$('input[name=edit_pic_big]').val(res.msg.big)
     		layer.msg('上传成功',{icon:6})
     	}else{
     		layer.msg(res.msg,{icon:5})
     	}
       
       console.log(res)
+      console.log(res.msg.small)
     }
     ,error: function(){
       //请求异常回调

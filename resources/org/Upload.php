@@ -5,16 +5,19 @@
  * Date: 2018/12/24
  * Time: 11:23
  */
-
+use Intervention\Image\ImageManagerStatic as Image;
   class Upload{
       private $max_size   = '2000000'; //设置上传文件的大小，此为2M
       private $rand_name   = true;   //是否采用随机命名
       private $allow_type  = array();  //允许上传的文件扩展名
       private $error     = 0;     //错误代号
       private $msg      = '';    //信息
+      private $msgs      = [];    //信息
       private $new_name   = '';    //上传后的文件名
       private $save_path   = '';    //文件保存路径
-      private $uploaded   = '';    //路径.文件名
+      private $uploaded1   = '';    //路径.文件名 原图
+      private $uploaded2   = '';    //路径.文件名 大图
+      private $uploaded3   = '';    //路径.文件名 小图
       private $file     = '';    //等待上传的文件
       private $file_type   = array();  //文件类型
       private $file_ext   = '';    //上传文件的扩展名
@@ -47,7 +50,7 @@
        * @param array $file 上传文件
        *     $file须包含$file['name'], $file['size'], $file['error'], $file['tmp_name']
        */
-      public function upload_file($file){
+      public function upload_file($file,$arr=''){
           //$this->file   = $file;
           $this->file_name   = $file['name'];
           $this->file_size   = $file['size'];
@@ -79,14 +82,25 @@
           }
           $this->set_file_name();
           is_dir($this->save_path) || @mkdir($this->save_path, 0777, true);
-          $this->uploaded = $this->save_path.$this->new_name;
-          if(move_uploaded_file($this->file_tmp_name, $this->uploaded)){
-              $this->msg = substr($this->uploaded,1);
-              return true;
-          }else{
-              $this->msg = '文件上传失败';
-              return false;
+          $this->uploaded1 = $this->save_path.'origin'.$this->new_name;
+          $this->uploaded2 = $this->save_path.'big'.$this->new_name;
+          $this->uploaded3 = $this->save_path.'small'.$this->new_name;
+
+          Image::make($this->file_tmp_name)->save($this->uploaded1);
+          if($arr){
+              Image::make($this->file_tmp_name)->resize(415, 155)->save($this->uploaded2);
+              Image::make($this->file_tmp_name)->resize(100, 90)->save($this->uploaded3);
           }
+          $this->msg = substr($this->uploaded1,1);
+          $this->msgs = ['origin'=>substr($this->uploaded1,1),'big'=>substr($this->uploaded2,1),'small'=>substr($this->uploaded3,1)];
+          return true;
+//          if(move_uploaded_file($this->file_tmp_name, $this->uploaded1)){
+//              $this->msg = substr($this->uploaded1,1);
+//              return true;
+//          }else{
+//              $this->msg = '文件上传失败';
+//              return false;
+//          }
       }
 
       /**
@@ -131,5 +145,9 @@
       //获取错误信息
       public function get_msg(){
           return $this->msg;
+      }
+
+      public function get_msgs(){
+          return $this->msgs;
       }
   }
