@@ -107,7 +107,7 @@ CREATE TABLE `bg_config` (
 
 /*Data for the table `bg_config` */
 
-insert  into `bg_config`(`id`,`configs`,`name`) values (1,'{\"website_title\":\"_tata个人博客 - 一个站在php代码中学习的个人博客网站\",\"website_keywords\":\"tata,blog,博客,php\",\"website_name\":\"http:\\/\\/www.tata.com\",\"website_copyright\":\"cc\",\"website_icp\":\"dd\",\"website_tongji\":\"49841651651\",\"website_description\":\"一起学习，一起进步\",\"website_use\":\"1\",\"src\":\"\\/upload\\/product\\/1546061354107554.png\"}','基本配置'),(2,'{\"src\":\"\\/upload\\/product\\/1546409843912859.jpg\",\"nickname\":\"tata\",\"name\":\"王模刚\",\"description\":\"tata的个人博客\",\"job\":\"php软件工程师\",\"mail\":\"crazytata@126.com\",\"qq\":\"1933559078\"}','站长配置'),(3,NULL,'其它配置');
+insert  into `bg_config`(`id`,`configs`,`name`) values (1,'{\"website_title\":\"_tata个人博客 - 一个站在php代码中学习的个人博客网站\",\"website_keywords\":\"tata,blog,博客,php\",\"website_name\":\"http:\\/\\/www.tata.com\",\"website_copyright\":\"cc\",\"website_icp\":\"dd\",\"website_tongji\":\"49841651651\",\"website_description\":\"一起学习，一起进步\",\"website_use\":\"1\",\"src\":\"\\/upload\\/product\\/1546061354107554.png\"}','基本配置'),(2,'{\"src\":\"\\/upload\\/product\\/origin1546696283742740.jpg\",\"nickname\":\"tata\",\"name\":\"王模刚\",\"description\":\"tata的个人博客\",\"job\":\"php软件工程师\",\"mail\":\"crazytata@126.com\",\"qq\":\"1933559078\"}','站长配置'),(3,NULL,'其它配置');
 
 /*Table structure for table `bg_friend` */
 
@@ -153,11 +153,11 @@ CREATE TABLE `bg_images` (
   `types` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0为banner',
   `is_delete` tinyint(1) DEFAULT '1' COMMENT '1正常  2已删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='图片表';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='图片表';
 
 /*Data for the table `bg_images` */
 
-insert  into `bg_images`(`id`,`url`,`b_url`,`s_url`,`desc`,`types`,`is_delete`) values (6,'/upload/product/1545717997447478.jpg',NULL,NULL,'博客图片',1,1),(11,'/upload/product/origin1546684259386921.jpg','/upload/product/big1546684259386921.jpg','/upload/product/small1546684259386921.jpg','博客图片',1,1),(12,'/upload/product/origin154668468879547.jpg','/upload/product/big154668468879547.jpg','/upload/product/small154668468879547.jpg','博客图片',1,1),(13,'/upload/product/origin1546684701891775.jpg','/upload/product/big1546684701891775.jpg','/upload/product/small1546684701891775.jpg','博客图片',1,1),(14,'/upload/product/origin1546684777915294.jpg','/upload/product/big1546684777915294.jpg','/upload/product/small1546684777915294.jpg','博客图片',1,1),(15,'/upload/product/origin1546684795873072.jpg','/upload/product/big1546684795873072.jpg','/upload/product/small1546684795873072.jpg','博客图片',1,1),(16,'/upload/product/origin154668482364946.jpg','/upload/product/big154668482364946.jpg','/upload/product/small154668482364946.jpg','博客图片',1,1);
+insert  into `bg_images`(`id`,`url`,`b_url`,`s_url`,`desc`,`types`,`is_delete`) values (6,'/upload/product/1545717997447478.jpg',NULL,NULL,'博客图片',1,1),(11,'/upload/product/origin1546684259386921.jpg','/upload/product/big1546684259386921.jpg','/upload/product/small1546684259386921.jpg','博客图片',1,1),(12,'/upload/product/origin154668468879547.jpg','/upload/product/big154668468879547.jpg','/upload/product/small154668468879547.jpg','博客图片',1,1),(13,'/upload/product/origin1546684701891775.jpg','/upload/product/big1546684701891775.jpg','/upload/product/small1546684701891775.jpg','博客图片',1,1),(14,'/upload/product/origin1546684777915294.jpg','/upload/product/big1546684777915294.jpg','/upload/product/small1546684777915294.jpg','博客图片',1,1),(15,'/upload/product/origin1546684795873072.jpg','/upload/product/big1546684795873072.jpg','/upload/product/small1546684795873072.jpg','博客图片',1,1),(16,'/upload/product/origin154668482364946.jpg','/upload/product/big154668482364946.jpg','/upload/product/small154668482364946.jpg','博客图片',1,1),(17,'/upload/product/origin154670299768785.jpg',NULL,NULL,'这是第一个bannner',0,1),(18,'/upload/product/origin1546703201391450.jpg',NULL,NULL,'这是第二个banner',0,1),(19,'/upload/product/origin1546703243144318.jpg',NULL,NULL,'这是第三个banner',0,1),(20,'/upload/product/origin1546703272306859.png',NULL,NULL,'再来一个banner',0,2);
 
 /*Table structure for table `bg_nav` */
 
@@ -199,7 +199,7 @@ CREATE TABLE `bg_user` (
 
 /*Data for the table `bg_user` */
 
-insert  into `bg_user`(`id`,`name`,`password`,`ip`,`load_time`,`true_name`,`telephone`,`cate_id`,`user_group`,`is_delete`,`pay_password`,`pay_moblie`,`can_pay`,`create_at`) values (1,'tata','d0fa9ead4ba8f67b80f82334a4beb090','127.0.0.1','2019-01-05 16:04:57','tata',18913533664,0,'1',1,NULL,NULL,0,'2018-12-11 15:19:26'),(2,'zif','d0fa9ead4ba8f67b80f82334a4beb090','','2018-12-18 16:26:59','zif',18688700750,NULL,'1',2,NULL,NULL,0,'2018-12-05 16:27:09'),(3,'王五','123456','',NULL,'',123456,NULL,'2',1,NULL,NULL,0,'2018-12-19 16:30:20'),(4,'周六','14e1b600b1fd579f47433b88e8d85291','',NULL,'周六',12345678977,NULL,'4',1,NULL,NULL,0,'2018-12-19 16:28:48');
+insert  into `bg_user`(`id`,`name`,`password`,`ip`,`load_time`,`true_name`,`telephone`,`cate_id`,`user_group`,`is_delete`,`pay_password`,`pay_moblie`,`can_pay`,`create_at`) values (1,'tata','d0fa9ead4ba8f67b80f82334a4beb090','127.0.0.1','2019-01-05 21:50:01','tata',18913533664,0,'1',1,NULL,NULL,0,'2018-12-11 15:19:26'),(2,'zif','d0fa9ead4ba8f67b80f82334a4beb090','','2018-12-18 16:26:59','zif',18688700750,NULL,'1',2,NULL,NULL,0,'2018-12-05 16:27:09'),(3,'王五','123456','',NULL,'',123456,NULL,'2',1,NULL,NULL,0,'2018-12-19 16:30:20'),(4,'周六','14e1b600b1fd579f47433b88e8d85291','',NULL,'周六',12345678977,NULL,'4',1,NULL,NULL,0,'2018-12-19 16:28:48');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

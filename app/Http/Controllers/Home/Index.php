@@ -10,6 +10,7 @@ use App\Http\Models\Backend\Article;
 use App\Http\Models\Backend\Category;
 use App\Http\Models\Backend\Comment;
 use Illuminate\Http\Request;
+use App\Http\Models\Backend\Images;
 class Index extends Base
 {
     // public function __construct()
@@ -23,9 +24,10 @@ class Index extends Base
         $article  = Article::getList(['is_delete'=>1]);
         $hit      = Article::getList(['is_delete'=>1],[1,6],['number','desc']);
         $hot      = Article::getList(['is_delete'=>1],[1,6],['id','desc']);
+        $banner      = Images::where([['is_delete','=',1],['types','=',0]])->select('id','url','desc')->orderBy('id','desc')->limit(3)->get();
         $cate_url = $this->product_url;
         $cate     = Category::getList(['is_del'=>1]);
-        return view('Home.index',compact('boss','article','cate_url','cate','hit','hot'));
+        return view('Home.index',compact('boss','article','cate_url','cate','hit','hot','banner'));
     }
 
     public function blog(){

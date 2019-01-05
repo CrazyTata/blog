@@ -8,6 +8,7 @@ use App\Http\Models\Backend\Config;
 use App\Http\Models\Backend\Nav;
 use App\Http\Models\Backend\Friend;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Models\Backend\Images;
 /**
  * @note System management
  * @title System-management
@@ -40,6 +41,14 @@ class System extends Base
     protected $messageLink=[
         'name.required'=>'导航名必须填写',
         'link.required'=>'链接必须填写'
+    ];
+    protected $validateBanner=[
+        'url'=>'required',
+        'desc'=>'required'
+    ];
+    protected $messageBanner=[
+        'url.required'=>'图片必须上传',
+        'desc.required'=>'描述必须填写'
     ];
     public function index()
     {
@@ -115,6 +124,31 @@ class System extends Base
         if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
         if($id = Friend::where('name',$request->name)->value('id')) return ['code'=>0,'msg'=>'此链接在系统中已经存在'];
         if(Friend::insertGetId($request->except(['_token']))) return ['code'=>1,'msg'=>'添加成功'];
+        return ['code'=>0,'msg'=>'网络错误，请稍后重试'];
+    }
+
+    public function bannerList(){
+        $info = [];
+        if($count=Images::count()) $info = Images::where('types',0)->get();
+        return compact('count','info');
+    }
+
+    public function modifyBanner(Request $request){
+        if ($request->has('is_delete'))  {
+            if(false!==Images::where('id',$request->id)->update($request->only(['is_delete']))) return ['code'=>1,'msg'=>'修改成功'];
+            else return ['code'=>0,'msg'=>'修改失败'];
+        }
+        $valadate = Validator::make($input=$request->except(['_token']),$this->validateBanner,$this->messageBanner);
+        if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
+        if(false!==Images::where('id',$request->id)->update($request->except(['_token','id']))) return ['code'=>1,'msg'=>'修改成功'];
+        return ['code'=>0,'msg'=>'修改失败'];
+    }
+
+    //add nav
+    public function addBanner(Request $request){
+        $valadate = Validator::make($input=$request->except(['_token']),$this->validateBanner,$this->messageBanner);
+        if($valadate->fails()) return ['code'=>0,'msg'=>$valadate->errors()->first()]; 
+        if(Images::insertGetId($request->except(['_token']))) return ['code'=>1,'msg'=>'添加成功'];
         return ['code'=>0,'msg'=>'网络错误，请稍后重试'];
     }
 }

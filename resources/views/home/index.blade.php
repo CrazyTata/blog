@@ -2,7 +2,10 @@
 <link href="{{ asset('home/css/index.css') }}" rel="stylesheet">
 <article>
   <div class="banner">
-    <div id="sucaihuo" class="fader"> <img class="slide" src="home/images/banner01.jpg"> <img class="slide" src="home/images/banner02.jpg"> <img class="slide" src="home/images/banner03.jpg">
+    <div id="sucaihuo" class="fader"> 
+      @foreach($banner as $k=>$v)
+      <img class="slide" alt="{{ $v->desc }}" src="{{ asset($v->url) }}"> 
+      @endforeach
       <div class="fader_controls">
         <div class="page prev" data-target="prev">&lsaquo;</div>
         <div class="page next" data-target="next">&rsaquo;</div>
@@ -64,7 +67,7 @@
     <div class="weixin">
       <h2 class="hometitle">官方微信</h2>
       <ul>
-        <img src="home/images/wx.jpg">
+        <img src="{{ asset($boss['src']) }}">
       </ul>
     </div>
   </div>

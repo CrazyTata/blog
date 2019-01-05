@@ -130,6 +130,7 @@
 					<li><a data-href="{{ url('/back/system/boss') }}" data-title="站长设置" href="javascript:void(0)">站长设置</a></li>
 					<li><a data-href="{{ url('/back/system/nav') }}" data-title="导航设置" href="javascript:void(0)">导航设置</a></li>
 					<li><a data-href="{{ url('/back/system/link') }}" data-title="友链设置" href="javascript:void(0)">友链设置</a></li>
+					<li><a data-href="{{ url('/back/system/banner') }}" data-title="友链设置" href="javascript:void(0)">banner设置</a></li>
 					<li><a data-href="{{ url('/back/system/other') }}" data-title="其他设置" href="javascript:void(0)">其他设置</a></li>
 					<li><a data-href="system-log.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
 				</ul>
