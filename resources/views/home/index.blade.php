@@ -29,13 +29,21 @@
             <div class="bloginfo"><span class="blogpic"><a href="{{ url($cate_url.'/'.$v->id) }}" title="{{ $v->title }}"><img src="{{ $v->b_url }}" alt="{{ $v->title }}" /></a></span>
               <p>{!! str_limit($v->content, 500) !!} ...</p>
             </div>
-            <div class="autor"><span class="lm f_l"></span><span class="dtime f_l">{{ $v->create_at }}</span><span class="viewnum f_l">浏览（<a href="{{ url($cate_url.'/'.$v->id) }}">{{ $v->number }}</a>）</span><span class="f_r"><a href="/jstt/css3/2018-03-26/812.html" class="more">阅读原文>></a></span></div>
+            <div class="autor"><span class="lm f_l"></span><span class="dtime f_l">{{ $v->create_at }}</span><span class="viewnum f_l">浏览（<a href="{{ url($cate_url.'/'.$v->id) }}">{{ $v->number }}</a>）</span><span class="f_r"><a href="{{ url($cate_url.'/'.$v->id) }}" class="more">阅读原文>></a></span></div>
             <div class="line"></div>
         </li>
         @endforeach
     </ul>
   </div>
   <div class="rbox">
+    <div class="links">
+      <h2 class="hometitle">所有分类</h2>
+      <ul>
+          @foreach($category['info'] as $k=>$v)
+              <li><a href="{{ url($cates_url.'/'.$v->name) }}" title="{{ $v->name }}">{{ $v->name }}</a></li>
+          @endforeach
+      </ul>
+    </div>
     <div class="paihang">
       <h2 class="hometitle">人气排行</h2>
       <ul>

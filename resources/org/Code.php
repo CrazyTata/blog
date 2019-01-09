@@ -1,5 +1,4 @@
 <?php
-session_start();
 class Code{
 
     //资源
@@ -31,7 +30,7 @@ class Code{
     {
         if(empty($this->font))
         {
-            $this->font = base_path().'\public\out\consola.ttf';
+            $this->font = base_path().'/public/out/consola.ttf';
         }
         $this->create();//生成验证码
         header("Content-type:image/png");
@@ -91,7 +90,7 @@ class Code{
 
     //返回验证码
     public function get() {
-        return $_SESSION['code'];
+        return session('v_code');
     }
 
     //生成验证码
@@ -101,7 +100,8 @@ class Code{
             $code .= $this->codeStr [mt_rand(0, strlen($this->codeStr) - 1)];
         }
         $this->code = strtoupper($code);
-        $_SESSION['code'] = $this->code;
+        session(['v_code' => $this->code]);
+        session()->save();
     }
 
     //建画布

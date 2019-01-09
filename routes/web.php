@@ -52,11 +52,11 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
 	Route::resource('/statistics','Statistics');
 
     //系统管理
-    Route::view('/system/boss','backend\system\boss');
-    Route::view('/system/nav','backend\system\nav');
-    Route::view('/system/banner','backend\system\banner');
-    Route::view('/system/link','backend\system\link');
-	Route::view('/system/other','backend\system\other');
+    Route::view('/system/boss','backend@system@boss');
+    Route::view('/system/nav','backend@system@nav');
+    Route::view('/system/banner','backend/system@banner');
+    Route::view('/system/link','backend@system@link');
+	Route::view('/system/other','backend@system@other');
     Route::get('/system/navList','System@navList');
     Route::post('/system/addNav','System@addNav');
     Route::post('/system/modifyNav','System@modifyNav');
@@ -69,13 +69,13 @@ Route::group(['prefix'=>'back','namespace'=>'Backend','middleware'=>['web','logi
     Route::post('/system/addBanner','System@addBanner');
     Route::post('/system/modifyBanner','System@modifyBanner');
 
-    Route::resource('/system','System');
-    // Route::resource('/system','System');
+    Route::resource('/system','System');     
+    // Route::resource('/system','System'); 
     
 });
-Route::get('/back/setCode','Backend\Index@setCode');
-Route::any('/back/login','Backend\Index@login');
-Route::any('/back/modpass','Backend\Index@modifyPass');
+Route::get('/back/setCode','Backend@Index@setCode');  
+Route::any('/back/login','Backend@Index@login'); 
+Route::any('/back/modpass','Backend@Index@modifyPass');
 
 
 
@@ -86,7 +86,7 @@ Route::group(['namespace'=>'Home','middleware'=>['web']],function (){
     Route::get('/blog','Index@blog')->name('blog');//文章
     Route::get('/about','Index@about')->name('about');//关于我
     Route::get('/message/{id?}','Index@message')->name('message');//留言
-    Route::get('/c/{id}','Category@cate')->name('cate');//留言
-    Route::get('/p/{id}','Index@product');//留言
+    Route::get('/c/{id}','Category@cate')->name('cate');//分类
+    Route::get('/p/{id}','Index@product');//详情
     Route::post('/message','Index@addMessage');
 });
